@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Livro</title>
+    <link rel="icon" href="./imgs/coruja.1.png">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body class="livro">
+    <div class="Menu">
+        <h1>LoreOwl𓅓</h1>
+        <a class="A" style="color: white;" href="./gestao.html">Página principal</a>
+        <a class="A" href="./usuario.html" style="color:white;">Voltar</a>
+        <button class="cart-btn" id="cartBtn"> <span class="icon">🛒</span><span class="text"></span></button>
+    </div>
+    <br><br><br><br><br><br>
+    <main class="book-details">
+        <div class="l1-image">
+            <img id="bookImg" src="" alt="Imagem do Livro"
+                onerror="this.src='https:/via.placeholder.com/300x400?text=Imagem+Indisponível';">
+        </div>
+        <div class="book-info">
+            <h1 id="bookTitle"></h1>
+            <h3 class="au" id="bookAuthor"></h3>
+            <p class="pre" id="bookPrice"></p>
+            <p class="descricao-livro" id="bookDescription"></p>
+            <button class="btn" id="buyButton">Comprar</button>
+            <button class="btn" id="readButton">Ler</button>
+           
+            
+        </div>
+    </main>
+    <div id="buyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Finalizar Compra</h2>
+            <form id="purchaseForm">
+                <div class="form-group">
+                    <label for="phone">Número de Telefone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="payment">Forma de Pagamento:</label>
+                    <select id="payment" name="payment" required>
+                        <option value="credit-card">Cartão de Crédito</option>
+                        <option value="boleto">Boleto</option>
+                        <option value="pix">PIX</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Finalizar Compra</button>
+            </form>
+        </div>
+    </div>
+    <script>
+       
+document.addEventListener("DOMContentLoaded", function () {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+   // if (!usuarioLogado) {
+        //alert("Você precisa estar logado para acessar esta página.");
+        //window.location.href = "loginpage.html";
+       // return;
+    //}
+
+    const paginaAtual = window.location.pathname;
+
+    const isGestao = paginaAtual.includes("gestao.html");
+
+    if (isGestao) {
+        const buyButton = document.getElementById("buyButton");
+        const readButton = document.getElementById("readButton");
+        if (buyButton) buyButton.style.display = "none";
+        if (readButton) readButton.style.display = "none";
+    }
+
+    const livro = JSON.parse(localStorage.getItem("livroSelecionado"));
+    const params = new URLSearchParams(window.location.search);
+
+    if (livro) {
+        displayBookInfo(livro);
+    } else if (params.has('title')) {
+        const bookFromUrl = {
+            titulo: params.get('title'),
+            autor: params.get('author') || 'Autor desconhecido',
+            preco: params.get('price') || '0.00',
+            img: params.get('img') || '',
+            descricao: params.get('description') || 'Descrição não disponível'
+        };
+        displayBookInfo(bookFromUrl);
+    } else {
+        window.location.href = "livro.html";
+    }
+
+    setupEventListeners(isGestao);
+});
+
+function displayBookInfo(book) {
+    document.getElementById('bookTitle').innerText = book.titulo;
+    document.getElementById('bookAuthor').innerText = "Autor: " + book.autor;
+    document.getElementById('bookPrice').innerText = "Preço: R$ " + book.preco;
+
+    if (book.img) {
+        document.getElementById('bookImg').src = book.img;
+        document.getElementById('bookImg').alt = `Capa do livro ${book.titulo}`;
+    }
+}
+
+function setupEventListeners(isGestao) {
+    const buyButton = document.getElementById('buyButton');
+    const readButton = document.getElementById('readButton');
+    const cartBtn = document.getElementById("cartBtn");
+    const cartText = document.querySelector("#cartBtn .text");
+    const buyModal = document.getElementById('buyModal');
+    const closeModal = document.getElementById('closeModal');
+    const purchaseForm = document.getElementById('purchaseForm');
+
+    if (buyButton && !isGestao) {
+        buyButton.addEventListener('click', () => {
+            buyModal.style.display = 'block';
+        });
+    }
+
+    if (readButton && !isGestao) {
+        readButton.addEventListener('click', () => {
+            const livro = JSON.parse(localStorage.getItem("livroSelecionado")) || {
+                titulo: document.getElementById('bookTitle').innerText,
+                autor: document.getElementById('bookAuthor').innerText.replace("Autor: ", "")
+            };
+            window.location.href = `leitura.html?title=${encodeURIComponent(livro.titulo)}&author=${encodeURIComponent(livro.autor)}`;
+        });
+    }
+
+    if (cartBtn && !isGestao) {
+        cartBtn.addEventListener("click", function () {
+            if (cartBtn.classList.contains("success")) return;
+
+            const livro = {
+                titulo: document.getElementById('bookTitle').innerText,
+                autor: document.getElementById('bookAuthor').innerText.replace("Autor: ", ""),
+                preco: document.getElementById('bookPrice').innerText.replace("Preço: R$ ", ""),
+                img: document.getElementById('bookImg').src
+            };
+
+            const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            carrinho.push(livro);
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+            cartBtn.classList.add("success");
+            cartText.classList.add("success");
+            cartText.classList.remove("text");
+            cartText.innerText = "Adicionado!";
+            
+
+            setTimeout(() => {
+                cartBtn.classList.remove("success");
+                cartText.classList.remove("success");
+                cartText.innerText = "";
+            }, 2000);
+        });
+    }
+
+    closeModal?.addEventListener('click', () => {
+        buyModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === buyModal) {
+            buyModal.style.display = 'none';
+        }
+    });
+
+    purchaseForm?.addEventListener('submit', (event) => {
+        event.preventDefault();
+        alert('Compra realizada com sucesso!');
+        buyModal.style.display = 'none';
+    });
+
+   
+}
+
+window.addEventListener("beforeunload", () => {
+    localStorage.removeItem("livroSelecionado");
+});
+
+
+
+    </script>
+    <script src="livro.js"></script>
+</body>
+<footer>&copy;Ryan Chaves</footer>
+</html>

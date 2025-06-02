@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form id="registerForm">
+            <h1>Cadastrar</h1>
+            <div class="input-box">
+                <input type="email" id="regEmail" placeholder="Digite seu email" required>
+                <i class="bx bxs-email"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="regUsername" placeholder="Crie seu nome de usuário" required>
+                <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="regPassword" placeholder="Senha" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="regConfirmPassword" placeholder="Confirme sua senha" required>
+                <i class="bx bxs-confirm-lock"></i>
+            </div>
+            <button type="submit" class="btn">Cadastrar</button>
+            <div class="register-link">
+                <p>Já possui uma conta?    
+                    <a href="./loginpage.html">Entre com seu login</a></p>
+                <a href="./gestao.html " style="color: white;">Voltar</a>
+            </div>
+        </form>
+    </div>
+    <script src="cad.js"></script>
+</body>
+</html>

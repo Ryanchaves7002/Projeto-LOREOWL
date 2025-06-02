@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="icon" href="/imgs/coruja.1.png">
+  <title>Resenhas/Criticas𓅓</title>
+</head>
+<body class="babau">
+  <div class="review-container">
+    <h2>Deixe sua avaliação</h2>
+    
+    <div class="stars" id="starRating">
+      <span data-star="1">★</span>
+      <span data-star="2">★</span>
+      <span data-star="3">★</span>
+      <span data-star="4">★</span>
+      <span data-star="5">★</span>
+    </div>
+
+    <textarea id="reviewText" placeholder="Escreva seu comentário..."></textarea>
+    <button onclick="submitReview()">Enviar Avaliação</button>
+
+    <hr />
+    <div id="reviewsList"></div>
+  </div>
+<script src="avaliações.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        p {
+            margin: 0;
+            padding: 12px 12px;
+        }
+        .menu {
+            background-color: black;
+            width: 100%;
+            height: 100%; 
+            margin: 0px;
+            padding: 16px 32px;
+        }
+        .menu h1 {
+            color: white;
+            text-align: center;
+        }
+        .menu ul {
+            justify-content: space-around;
+            align-items: center;
+            display: flex;
+            text-decoration: none;
+        }
+        .menu a {
+            color: orangered;
+            outline: none;
+            text-decoration: none;
+        }
+
+        .wrap {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logbut {
+            min-width: 30px;
+            min-height: 6px;
+            display: inline-flex;
+            font-family: 'Nunito', sans-serif;
+            font-size: 22px;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 1.3px;
+            font-weight: 400;
+            color: white;
+            background: linear-gradient(90deg, rgb(218, 128, 12) 0%, rgb(228, 54, 11) 100%);
+            border: none;
+            border-radius: 20px;
+            box-shadow: 12px 12px 24px rgba(243, 121, 6, 0.64);
+            transition: all 0.3s ease-in-out 0s;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            padding: 10px;
+        }
+        .logbut::before {
+            content: '';
+            border-radius: 30px;
+            min-width: calc(140px - 16px);
+            min-height: calc(44px + 2px);
+            border: 6px solid #ff9100;
+            box-shadow: 0 0 60px rgba(255, 123, 0, 0.64);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 0.3s ease-in-out 0s;
+        }
+        .logbut:hover, .logbut:focus {
+            color: #37373f;
+            transform: translateY(-6px);
+        }
+        .logbut:hover::before, .logbut:focus::before {
+            opacity: 1;
+        }
+        .logbut::after {
+            content: '';
+            width: 70px;
+            height: 10px;
+            border-radius: 100%;
+            border: 6px solid #fc9209;
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: ring 1.5s infinite;
+        }
+        .logbut:hover::after, .logbut:focus::after {
+            animation: none;
+            display: none;
+        }
+        @keyframes ring {
+            0% {
+                width: 30px;
+                height: 30px;
+                opacity: 1;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+        .home {
+            background-color: rgb(8, 102, 5);
+            text-align: center;
+            text-decoration: dashed;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 32px 16px;
+            height: 500px;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+
+        .imgs1 {
+            display: flex;
+            flex-direction: column;
+            text-align: center; 
+            justify-content: space-around; 
+            margin: 0 auto;
+            padding: 12px ;
+            position: relative;
+            top: -50px;
+        }
+        .imgs2-container {
+            display: flex;
+            text-align: center; 
+            justify-content: space-around; 
+            align-items: center;
+            padding: 12px;
+        }
+
+        .img-item, .img-item1 {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            text-align: center; 
+            width: 200px; 
+            height: 100px;
+            transition: transform 0.3s ease;
+        }
+        .img-item1 {
+            border-radius: 50%; 
+            object-fit: cover; 
+        }
+        .img-item1:hover {
+            transform: scale(1.1);
+        }
+        .img-item img {
+            border-radius: 50%; 
+            object-fit: cover; 
+        }
+        .img-item:hover {
+            transform: scale(1.1);
+        }

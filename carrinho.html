@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="icon" href="./imgs/coruja.1.png">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body class="body-kit">
+    <div class="Menu">
+        <h1>LoreOwl𓅓</h1>
+        <a class="A" style="color: white;" href="./gestao.html">Voltar para início</a>
+        <a class="A" style="color: white;" href="./usuario.html" >Voltar</a>
+    </div>
+    <h1 class="titulo-carrinho">Itens no Carrinho</h1>
+    <main class="carrinho">
+        <div class="Itens" id="carrinhoItens"><p class="carrinho p"></p></div>
+        
+    </main>
+    <button id="limparCarrinho" class="limparCarrinho2">Limpar carrinho</button>
+    <script src="carrinho.js"></script>
+   
+    <div id="buyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Finalizar Compra</h2>
+            <form id="purchaseForm">
+                <div class="form-group">
+                    <label for="phone">Número de Telefone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="payment">Forma de Pagamento:</label>
+                    <select id="payment" name="payment" required>
+                        <option value="credit-card">Cartão de Crédito</option>
+                        <option value="boleto">Boleto</option>
+                        <option value="pix">PIX</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Finalizar Compra</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html> <footer class="footer-car" >&copy;Ryan chaves </footer>

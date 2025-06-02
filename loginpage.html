@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loginpage</title>
+    <link rel="icon" href="./imgs/coruja.1.png">
+    <link rel="stylesheet" href="2.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <form id="loginForm">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" id="loginUsername" placeholder="Usuário" required>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" id="loginEmail" placeholder="Digite seu email" required>
+                    <i class="bx bxs-email"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="loginPassword" placeholder="Senha" required>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Lembre-se de mim</label>
+                    <a href="#">Esqueci minha senha</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <br><br>
+                <div class="register-link">
+                    <a href="./gestao.html"
+                        style="color: white;  transform: translateY(-50%);">Voltar</a>
+                </div>
+            </form>
+        </div>
+        <div class="wrapper">
+            <form action="">
+                <h1>Cadastrar</h1>
+                <h2>Não tem uma conta ainda?</h2>
+                <div class="imagem-container"> <img src="./imgs/coruja.1.png"
+                        alt="" width="400px">
+                </div>
+                <p>faça seu cadastro aqui na loreowl</p>
+                <div class="register-link">
+                    <p>
+                        <a href="./cadastrar.html"><button type="button" class="btn">Cadastrar</button></a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>

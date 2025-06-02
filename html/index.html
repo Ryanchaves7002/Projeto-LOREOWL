@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centralizar Imagem</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .menu {
+            background-color: black;
+            width: 100%;
+            padding: 16px 32px;
+        }
+        .menu h1 {
+            color: white;
+            text-align: center;
+        }
+        .wrap {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .home {
+            background-color: rgb(8, 102, 5);
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 32px 16px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .imgs1 {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        .imgs2-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 12px;
+            margin-top: 150px;
+        }
+        .img-item, .img-item1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 200px;
+            height: 100px;
+            transition: transform 0.3s ease;
+        }
+        .img-item1 img {
+            border-radius: 50%; 
+            object-fit: cover;
+            width: 150px;
+            height: 150px;
+        }
+        .img-item1:hover {
+            transform: scale(1.1);
+        }
+        .img-item img {
+            border-radius: 50%; 
+            object-fit: cover;
+            width: 100px;
+            height: 100px;
+        }
+        .img-item:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h1>Menu Principal</h1>
+    </div>
+
+    <div class="home">
+        <div class="imgs1">
+            <div class="img-item1">
+                <img src="image1" alt="Imagem Central">
+                <p>Imagem Central</p>
+            </div>
+        </div>
+
+        <div class="imgs2-container">
+            <div class="img-item">
+                <img src="image2.jpg" alt="Imagem 1">
+                <p>Imagem 1</p>
+            </div>
+            <div class="img-item">
+                <img src="image3.jpg" alt="Imagem 2">
+                <p>Imagem 2</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
