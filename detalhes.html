@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Livro</title>
+    <link rel="stylesheet" href="/css/detalhes.css">
+    
+</head>
+
+<body class="Principal">
+    <div class="detalhes-livro">
+        <div id="livro-container"></div>
+        <a href="leitura.html" class="btn-voltar">Voltar ao Catálogo</a>
+    </div>
+
+    <script>
+        const livroSelecionado = JSON.parse(localStorage.getItem('livroSelecionado'));
+        const livroContainer = document.getElementById('livro-container');
+
+        if (livroSelecionado) {
+            livroContainer.innerHTML = `
+                <h1>${livroSelecionado.titulo}</h1>
+                <img src="${livroSelecionado.img}" alt="${livroSelecionado.alt}">
+                <div class="info-livro">
+                    <p><strong>Autor:</strong> ${livroSelecionado.autor}</p>
+                    <p><strong>Preço:</strong> ${livroSelecionado.preco}</p>
+                    <p><strong>Descrição:</strong> ${livroSelecionado.texto}</p>
+                    ${livroSelecionado.pdf ?
+                    `<a href="${livroSelecionado.pdf}" target="_blank" class="btn-voltar">Ler PDF</a>` :
+                    '<p>PDF não disponível</p>'}
+                </div>
+            `;
+        } else {
+            livroContainer.innerHTML = `
+                <p>Nenhum livro selecionado.</p>
+                <p>Volte ao catálogo para escolher um livro.</p>
+            `;
+        }
+    </script>
+</body>
+
+</html>

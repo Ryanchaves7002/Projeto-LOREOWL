@@ -1,3 +1,4 @@
+
 document.getElementById("registerForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -6,6 +7,7 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
     const password = document.getElementById("regPassword").value;
     const confirmPassword = document.getElementById("regConfirmPassword").value;
 
+    
     
     if (password !== confirmPassword) {
         alert("As senhas não coincidem!");
@@ -21,6 +23,9 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
     const user = { username, email, password };
     localStorage.setItem(email, JSON.stringify(user));
     alert("Cadastro realizado com sucesso!");
-    
+
     window.location.href = "./loginpage.html";
 });
+
+
+

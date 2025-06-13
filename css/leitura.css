@@ -1,0 +1,288 @@
+:root {
+  --primary: #2c3e50;
+  --secondary: #e74c3c;
+  --accent: #3498db;
+  --light: #ecf0f1;
+  --dark: #2c3e50;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.btn-voltar:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.btn-voltar i {
+  margin-right: 0.5rem;
+}
+
+#Leitura {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f7fa;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.Principal-leitura {
+  background-image: url(/imgs/walpaper2.jpeg);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.My-books {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.8rem;
+  color: var(--primary);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.My-books::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+#livros-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.livro {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.livro:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.livro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(52, 152, 219, 0.1));
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 1;
+}
+
+.livro:hover::before {
+  opacity: 1;
+}
+
+.livro-img-container {
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.livro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.livro:hover img {
+  transform: scale(1.05);
+}
+
+.livro-info {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 2;
+  background: white;
+}
+
+.livro-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  font-weight: 700;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.livro-autor {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.livro-preco {
+  font-weight: 700;
+  color: var(--secondary);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.livro-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--secondary);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  z-index: 3;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: var(--shadow);
+  font-size: 1rem;
+  transition: var(--transition);
+  padding-left: 3rem;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7f8c8d;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  background: white;
+  border: none;
+  border-radius: 50px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: #7f8c8d;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(52, 152, 219, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--accent);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  #livros-container {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .My-books {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #livros-container {
+    grid-template-columns: 1fr;
+  }
+
+  .Principal-leitura {
+    padding: 1rem;
+  }
+}

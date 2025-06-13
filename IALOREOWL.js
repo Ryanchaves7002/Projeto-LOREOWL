@@ -1,3 +1,4 @@
+// Base de conhecimento e lógica de IA da LoreOwl aprimorada
 let faqBase = []
 
 function carregarMemoria() {
@@ -177,6 +178,7 @@ function carregarMemoria() {
         resposta:
           'Sim, em determinadas campanhas promocionais oferecemos cupons e pacotes com desconto para múltiplas compras.'
       }
+      // Adicione todas as outras perguntas originais aqui...
     ]
     salvarMemoria()
   }
@@ -206,24 +208,46 @@ function normalizarTexto(texto) {
     site: 'site',
     cad: 'cadastro',
     entrar: 'login',
-    fzr:'fazer'
+    fzr: 'fazer',
+    criar: 'fazer',
+    conta: 'cadastro',
+    login: 'cadastro',
+    usar: 'utilizar',
+    inscrever: 'cadastrar',
+    abrir: 'acessar',
+    acessar: 'entrar'
   }
-
   let textoLimpo = texto.toLowerCase()
+  textoLimpo = textoLimpo.replace(/[.,!?;:]/g, '') // remove pontuação
   for (const [giria, formal] of Object.entries(substituicoes)) {
     const regex = new RegExp(`\\b${giria}\\b`, 'g')
     textoLimpo = textoLimpo.replace(regex, formal)
   }
+  textoLimpo = textoLimpo.normalize('NFD').replace(/[̀-ͯ]/g, '') // tira acentos
   return textoLimpo
 }
 
+function extrairIntent(texto) {
+  // Remove expressões tipo "Eae, quero saber sobre ..."
+  return texto
+    .toLowerCase()
+    .replace(/^.*?(quero saber|queria saber|me fala|me diz|gostaria de saber|como que faz|como faço|como faz|pode me dizer|explica ai|fala ai|me explica)\b/g, '')
+    .trim()
+}
+
 function responderPergunta(perguntaUsuario) {
+  const saudacoes = ['oi', 'olá', 'opa', 'eae', 'fala', 'bom dia', 'boa tarde', 'boa noite']
   const perguntaLimpa = normalizarTexto(perguntaUsuario)
+  if (saudacoes.some(s => perguntaLimpa.includes(s))) {
+    return 'Olá! Como posso ajudar? 😊'
+  }
+
+  const textoFiltrado = normalizarTexto(extrairIntent(perguntaUsuario))
   for (let item of faqBase) {
     const perguntaBase = normalizarTexto(item.pergunta)
     if (
-      perguntaLimpa.includes(perguntaBase) ||
-      perguntaBase.includes(perguntaLimpa)
+      textoFiltrado.includes(perguntaBase) ||
+      perguntaBase.includes(textoFiltrado)
     ) {
       return item.resposta
     }
@@ -239,6 +263,9 @@ function aprenderNovaResposta(pergunta, resposta) {
 function abrirChat() {
   const chat = document.getElementById('chatIA')
   chat.style.display = chat.style.display === 'none' ? 'flex' : 'none'
+  const chatBody = document.getElementById('chatBody')
+  chatBody.innerHTML += `<p><strong>LoreOwl:</strong> Olá! Como posso ajudar? 😊</p>`
+  chatBody.scrollTop = chatBody.scrollHeight
 }
 
 function enviarPergunta() {

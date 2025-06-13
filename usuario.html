@@ -14,19 +14,19 @@
 
     <div id="loadingScreen">
         <div id="loadingText"><b>LoreOwl</b>
-            <div id="loadingImage"> <img src="./imgs/coruja.1.png" alt="">
+            <div id="loadingImage"> <img src="/imgs/coruja.1.png" alt="">
             </div>
         </div>
     </div>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="/css/style2.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <div class="Menu">
-        <h1 class="h1menu">Loreowl𓅓</h1>
+        <h1 class="h1menu-user">Loreowl𓅓</h1>
         <br><br><br>
         <ul class="Menuul2">
             <li><a href="#Sobre" target="_self">Sobre</a></li>
             <li><a href="#Parceiros">Parceiros</a></li>
-            <li><a href="#contatos">Contatos</a></li>
+            <li><a href="https://t.me/+iLgBJrQUOJMyMzQx">Entre no Ninho</a></li>
             <li><a href="./carrinho.html" style="color: white;">Carrinho</a></li>
             <li><a href="/resenha.html">Avalie-nos!</a></li>
         </ul>
@@ -36,21 +36,36 @@
                 <i class='bx bxs-user-circle'></i>
 
             </div>
-            <div class="search-container2">
+            <div class="search-container">
                 <input type="text" id="searchBoxUsuario" class="search-input" placeholder="Buscar livros...">
-                <span class="search-icon2">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10" cy="10" r="7" stroke="black" stroke-width="2" fill="none" />
-                        <line x1="15" y1="15" x2="20" y2="20" stroke="black" stroke-width="2" />
+                <span class="search-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="grey" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="7" stroke="grey
+                        " stroke-width="2" fill="none" />
+                        <line x1="15" y1="15" x2="20" y2="20" stroke="grey" stroke-width="2" />
                     </svg>
                 </span>
                 <div class="suggestions2user" id="suggestionsUsuario"></div>
             </div>
 
         </div>
+        <div class="Sair-btn">
+            <a href="gestao.html">
+                <button title="Sair" id="logout">
+                    <svg width="34px" height="44px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 17L21 12L16 7" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M21 12H9" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path
+                            d="M12 5H7C6.46957 5 5.96086 5.21071 5.58579 5.58579C5.21071 5.96086 5 6.46957 5 7V17C5 17.5304 5.21071 18.0391 5.58579 18.4142C5.96086 18.7893 6.46957 19 7 19H12"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button></a>
+
+        </div>
+
     </div>
-
-
     </div>
 </head>
 
@@ -86,92 +101,108 @@
 
         <script src="./perfil.js"></script>
         <section>
-            <h1 class="rgb-text">Seja bem-vindo!</h1>
-            <b>
-                <p style="color: rgb(164, 159, 168);">Espero que encontre o que busca!</p>
-            </b>
-            <div class="img">
-                <img src="/imgs/coruja.1.png" alt="" width="250px" height="220px">
-            </div>
-            <br><br>
+
             <h1>Lançamentos</h1>
             <div class="books-container">
                 <button class="button" id="prevButton1">◀</button>
                 <div class="BOOKS" id="booksContainer1">
                     <div class="l1" id="Poder"
                         onclick="openBookPage('Poder do hábito','Charles Duhigg','17,56','https:http2.mlstatic.com/D_NQ_NP_2X_683822-MLB44517538285_012021-F.jpg')">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_683822-MLB44517538285_012021-F.jpg" alt=""
-                            width="250px">
-                        <h2>Poder do hábito</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Poder do hábito')">Ver
-                            semelhantes</button>
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_683822-MLB44517538285_012021-F.jpg" alt="">
+                        <div class="info-container">
+                            <h2>Poder do hábito</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Poder do hábito')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="Sapiens"
                         onclick="openBookPage('Sapiens História breve da humanidade','Yuval Noah Harari','33,76','https:/th.bing.com/th/id/OIP.KPgo7MPKyYOHTUglXXhw6wHaLO?rs=1&pid=ImgDetMain')">
-                        <img src="https://th.bing.com/th/id/OIP.KPgo7MPKyYOHTUglXXhw6wHaLO?rs=1&pid=ImgDetMain" alt=""
-                            width="250px">
-                        <h2>Sapiens História breve da humanidade</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Sapiens a breve história da humanidade')">Ver
-                            semelhantes</button>
+                        <img src="https://th.bing.com/th/id/OIP.KPgo7MPKyYOHTUglXXhw6wHaLO?rs=1&pid=ImgDetMain" alt="">
+                        <div class="info-container">
+                            <h2>Sapiens História breve da humanidade</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Sapiens a breve história da humanidade')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="A_arte_da_guerra"
                         onclick="openBookPage('A Arte da Guerra', 'Sun Tzu', '29.90', 'https:/tse4.mm.bing.net/th/id/OIP.aW2s9HSkN2Y9Akf2rytzTwHaKe?rs=1&pid=ImgDetMain')">
-                        <img src="https://tse4.mm.bing.net/th/id/OIP.aW2s9HSkN2Y9Akf2rytzTwHaKe?rs=1&pid=ImgDetMain"
-                            alt="A Arte da Guerra" width="250px">
-                        <h2>A Arte da Guerra </h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A Arte da Guerra')">Ver
-                            semelhantes</button>
+                        <img src="https://files.passeidireto.com/cfbc8237-aee4-479e-8342-da037faa9343/bg1.png"
+                            alt="A Arte da Guerra">
+                        <div class="info-container">
+                            <h2>A Arte da Guerra</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A Arte da Guerra')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="platao"
                         onclick="openBookPage('Platão', 'Platão', '39.90', 'https:/www.topleituras.com/livros/platao-teoria-filosofia-vida-obra-maiores-filosofos-tempos-discovery-publicacoes-bd8c-capa.jpg')">
                         <img src="https://www.topleituras.com/livros/platao-teoria-filosofia-vida-obra-maiores-filosofos-tempos-discovery-publicacoes-bd8c-capa.jpg"
-                            alt="Platão" width="262px">
-                        <h2>Platão:Teoria & Filosofia</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Platão:Teoria & Filosofia')">Ver
-                            semelhantes</button>
+                            alt="Platão">
+                        <div class="info-container">
+                            <h2>Platão:Teoria & Filosofia</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Platão:Teoria & Filosofia')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="o-principe"
                         onclick="openBookPage('O Príncipe', 'Nicolau Maquiavel', '49.90', 'https:/tse3.mm.bing.net/th/id/OIP.4T3tXPIA1mjIt4-Jt64w0QHaKy?rs=1&pid=ImgDetMain')">
                         <img src="https://tse3.mm.bing.net/th/id/OIP.4T3tXPIA1mjIt4-Jt64w0QHaKy?rs=1&pid=ImgDetMain"
-                            alt="O Príncipe" width="250px">
-                        <h2>O Príncipe</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O Príncipe')">Ver semelhantes</button>
+                            alt="O Príncipe">
+                        <div class="info-container">
+                            <h2>O Príncipe</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O Príncipe')">Ver semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="odisseia"
                         onclick="openBookPage('Odisseia', 'Homero', '69.90', 'https:/m.media-amazon.com/images/I/51KQoA7fmWL.jpg')">
-                        <img src="https://m.media-amazon.com/images/I/51KQoA7fmWL.jpg" alt="Odisseia" width="250px">
-                        <h2>Odisseia</h2>
-                        <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('Odisseia')">Ver
-                            semelhantes</button>
+                        <img src="https://m.media-amazon.com/images/I/51KQoA7fmWL.jpg" alt="Odisseia">
+                        <div class="info-container">
+                            <h2>Odisseia</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Odisseia')">Ver semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="iliada"
                         onclick="openBookPage('Ilíada', 'Homero', '79.90', 'https:/a-static.mlcdn.com.br/800x560/livro-iliada/magazineluiza/228539700/9e11c08aee2cca10e7a147459b39700f.jpg')">
                         <img src="https://a-static.mlcdn.com.br/800x560/livro-iliada/magazineluiza/228539700/9e11c08aee2cca10e7a147459b39700f.jpg"
-                            alt="Ilíada" width="250px">
-                        <h2>Ilíada</h2>
-                        <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('Ilíada')">Ver
-                            semelhantes</button>
+                            alt="Ilíada">
+                        <div class="info-container">
+                            <h2>Ilíada</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Ilíada')">Ver semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="Fahrenheit"
                         onclick="openBookPage('Fahrenheit', 'Ray Bradbury', '67.35', 'https:th.bing.com/th/id/R.0265102b2ba3080203cd721f84f2f4fe?rik=h1C7vQlEAGCjCQ&pid=ImgRaw&r=0')">
                         <img src="https://th.bing.com/th/id/R.0265102b2ba3080203cd721f84f2f4fe?rik=h1C7vQlEAGCjCQ&pid=ImgRaw&r=0"
-                            alt="Fahrenheit" width="250px">
-                        <h2>Fahrenheit</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Fahrenheit')">Ver semelhantes</button>
+                            alt="Fahrenheit">
+                        <div class="info-container">
+                            <h2>Fahrenheit</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Fahrenheit')">Ver semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="Duna"
                         onclick="openBookPage('Duna', 'Frank herbert', '55.01', 'https/http2.mlstatic.com/D_NQ_NP_703592-MLU70117859400_062023-O.webp')">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_703592-MLU70117859400_062023-O.webp" alt="Ilíada"
-                            width="250px">
-                        <h2>Duna</h2>
-                        <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('Duna')">Ver
-                            semelhantes</button>
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_703592-MLU70117859400_062023-O.webp" alt="Duna">
+                        <div class="info-container">
+                            <h2>Duna</h2>
+                            <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('Duna')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                 </div>
                 <button class="button" id="nextButton1">▶</button>
@@ -184,64 +215,84 @@
                         onclick="openBookPage('As Crônicas de Nárnia', 'C.S. Lewis', '39.90', 'https:/a-static.mlcdn.com.br/800x560/livro-as-cronicas-de-narnia-volume-unico/olistsp/osplbmtnox80xv3h/5ae043fe928949fb5759725383feba94.jpg')">
                         <img src="https://a-static.mlcdn.com.br/800x560/livro-as-cronicas-de-narnia-volume-unico/olistsp/osplbmtnox80xv3h/5ae043fe928949fb5759725383feba94.jpg"
                             alt="As Crônicas de Nárnia" width="250px">
-                        <h2>As Crônicas de Nárnia</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('As Crônicas de Nárnia')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>As Crônicas de Nárnia</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('As Crônicas de Nárnia')">Ver
+                                semelhantes</button>
+                        </div>
+
                     </div>
                     <div class="l1" id="a-chama-de-ember"
                         onclick="openBookPage('A Chama de Ember', 'Jeanne DuPrau', '29.90', 'https:/m.media-amazon.com/images/I/A1P+ndx6rAL._SY425_.jpg')">
-                        <img src="https://m.media-amazon.com/images/I/A1P+ndx6rAL._SY425_.jpg" alt="A Chama de Ember"
-                            width="250px">
-                        <h2>A Chama de Ember</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A Chama de Ember')">Ver
-                            semelhantes</button>
+                        <img src="https://m.media-amazon.com/images/I/A1P+ndx6rAL._SY425_.jpg" alt="A Chama de Ember">
+                        <div class="info-container">
+                            <h2>A Chama de Ember</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A Chama de Ember')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="o-acordo-com-o-rei-elfo"
                         onclick="openBookPage('O Acordo com o Rei Elfo', 'R.A. Salvatore', '39.90', 'https:/m.media-amazon.com/images/I/81P5MhGTrpL._SL1500_.jpg')">
                         <img src="https://m.media-amazon.com/images/I/81P5MhGTrpL._SL1500_.jpg"
                             alt="O Acordo com o Rei Elfo" width="250px">
-                        <h2>O Acordo com o Rei Elfo</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O Acordo com o Rei Elfo')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>O Acordo com o Rei Elfo</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O Acordo com o Rei Elfo')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="Os filhos de Hurin"
                         onclick="openBookPage('Os filhos de Hurin', 'J.R.R  TOLKIEN', '42.00', 'https:www.estamosemobras.com.br/wp-content/uploads/2014/11/capa-filhos-de-hurin-656x1024.jpg')">
                         <img src="https://www.estamosemobras.com.br/wp-content/uploads/2014/11/capa-filhos-de-hurin-656x1024.jpg"
                             alt="Os filhos de Hurin" width="250px">
-                        <h2>Os filhos de Hurin</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Os filhos de Hurin')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Os filhos de Hurin</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Os filhos de Hurin')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="a História sem fim"
                         onclick="openBookPage('A História sem fim', 'Michel ende', '39.90', 'https:www.antroposofica.com.br/lojas/00000472/prod/historia-sem-fim_600.jpg?cccfc=283e2101')">
                         <img src="https://www.antroposofica.com.br/lojas/00000472/prod/historia-sem-fim_600.jpg?cccfc=283e2101"
                             alt="A história sem fim" width="250px">
-                        <h2>A história sem fim</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A história sem fim')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>A história sem fim</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A história sem fim')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="A Bússola de Ouro"
                         onclick="openBookPage('A Bússola de Ouro', 'Phillip Pulman', '30.95', 'https:/3.bp.blogspot.com/-9y3YptB3r3c/Wd7lx3wXclI/AAAAAAAAhnY/h1RNKBIZtA0A-Dy0qzTuz6Ox93fIMP_PgCLcBGAs/s1600/A%2BB%25C3%25BAssola%2Bde%2BOuro.jpg')">
                         <img src="https://3.bp.blogspot.com/-9y3YptB3r3c/Wd7lx3wXclI/AAAAAAAAhnY/h1RNKBIZtA0A-Dy0qzTuz6Ox93fIMP_PgCLcBGAs/s1600/A%2BB%25C3%25BAssola%2Bde%2BOuro.jpg"
                             alt="A bussola de ouro" width="250px">
-                        <h2>A bussola de ouro</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A bússola de ouro')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>A bússola de ouro</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A bússola de ouro')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="Eragon"
                         onclick="openBookPage('Eragon', 'Cristhopher Paolini', '27.10', 'https:www.phantastik-couch.de/fileadmin/_processed_/2/8/csm_Eragon_1_-_Paolini_6af65ad037.jpg')">
                         <img src="https://www.phantastik-couch.de/fileadmin/_processed_/2/8/csm_Eragon_1_-_Paolini_6af65ad037.jpg"
                             alt="Eragon" width="250px">
-                        <h2>Eragon</h2>
-                        <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('Eragon')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Eragon</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Eragon')">Ver semelhantes</button>
+                        </div>
                     </div>
+
                 </div>
                 <button class="button" id="nextButton2">▶</button>
             </div>
@@ -250,103 +301,139 @@
                 <button class="button" id="prevButton3">◀</button>
                 <div class="BOOKS" id="booksContainer3">
                     <div class="l1" id="submersa"
-                        onclick="openBookPage('A menina Submersa','Caitlín R. Kiernan','59.87','https:/m.media-amazon.com/images/I/51EsJgaKhwL.jpg')">
+                        onclick="openBookPage('A menina Submersa','Caitlín R. Kiernan','59,87','https:/m.media-amazon.com/images/I/51EsJgaKhwL.jpg')">
                         <img src="https://m.media-amazon.com/images/I/51EsJgaKhwL.jpg" alt="A menina Submersa"
                             width="240px">
-                        <h2>A menina Submersa</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A menina Submersa')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>A menina Submersa</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A menina Submersa')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="contos-de-terror"
                         onclick="openBookPage('Contos de Terror', 'Vários Autores', '29.90', 'https:/http2.mlstatic.com/D_NQ_NP_651777-MLB46547775208_062021-O.webp')">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_651777-MLB46547775208_062021-O.webp"
                             alt="Contos de Terror" width="250px">
-                        <h2>Contos de Terror</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Contos de Terror')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Contos de Terror</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Contos de Terror')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="estou-atras-de-voce"
                         onclick="openBookPage('Estou Atrás de Você', 'Vários Autores', '39.90', 'https:/th.bing.com/th/id/OIP.YLjadM_1AYgYOswFbBuw2QAAAA?rs=1&pid=ImgDetMain')">
                         <img src="https://th.bing.com/th/id/OIP.YLjadM_1AYgYOswFbBuw2QAAAA?rs=1&pid=ImgDetMain"
                             alt="Estou Atrás de Você" width="250px">
-                        <h2>Estou Atrás de Você</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Estou Atrás de Você')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Estou Atrás de Você</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Estou Atrás de Você')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="o-chamado-de-cthulhu"
                         onclick="openBookPage('O Chamado de Cthulhu', 'H.P. Lovecraft', '49.90', 'https:/www.sociedadenerd.com.br/wp-content/uploads/2023/04/livro-O-Chamado-de-Cthulhu-683x1024.jpg')">
                         <img src="https://www.sociedadenerd.com.br/wp-content/uploads/2023/04/livro-O-Chamado-de-Cthulhu-683x1024.jpg"
                             alt="O Chamado de Cthulhu" width="250px">
-                        <h2>O Chamado de Cthulhu</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O Chamado de Cthulhu')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>O Chamado de Cthulhu</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O Chamado de Cthulhu')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="imperiais"
                         onclick="openBookPage('Imperiais', 'Vários Autores', '29.90', 'https:/th.bing.com/th/id/OIP.22TbIiA7c9GryhA1g-ODCgHaK9?rs=1&pid=ImgDetMain')">
                         <img src="https://th.bing.com/th/id/OIP.22TbIiA7c9GryhA1g-ODCgHaK9?rs=1&pid=ImgDetMain"
                             alt="Imperiais" width="250px">
-                        <h2>Imperiais</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Imperiais')">Ver semelhantes</button>
+                        <div class="info-container">
+                            <h2>Imperiais</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Imperiais')">Ver semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="a-tragedia-de-macbeth"
                         onclick="openBookPage('A tragédia de MACBETCH', 'William Shakespeare', '39.90', 'https:/dcdn-us.mitiendanube.com/stores/005/277/283/products/1-d8dbecbe05db3ba67717334915875312-1024-1024.webp')">
                         <img src="https://dcdn-us.mitiendanube.com/stores/005/277/283/products/1-d8dbecbe05db3ba67717334915875312-1024-1024.webp"
                             alt="A tragédia de MACBETCH" width="250px">
-                        <h2>A tragédia de MACBETCH</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A tragédia de MACBETCH')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>A tragédia de MACBETCH</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A tragédia de MACBETCH')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="ninguem-vai-te-ouvir-gritar"
                         onclick="openBookPage('Ninguem vai te ouvir gritar', 'Vários Autores', '29.90', 'https:/imgv2-2-f.scribdassets.com/img/document/688064400/original/5aaa276f27/1702397513?v=1')">
                         <img src="https://imgv2-2-f.scribdassets.com/img/document/688064400/original/5aaa276f27/1702397513?v=1"
                             alt="Ninguem vai te ouvir gritar" width="280px">
-                        <h2>Ninguem vai te ouvir gritar</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Ninguem vai te ouvir gritar')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Ninguem vai te ouvir gritar</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Ninguem vai te ouvir gritar')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="a-ilha-das-almas-selvagens"
                         onclick="openBookPage('A ilha das almas selvagens', 'H.S WELLS', '59.90', 'https:/m.media-amazon.com/images/I/81u7cHnV+KL._SL1500_.jpg')">
                         <img src="https://m.media-amazon.com/images/I/81u7cHnV+KL._SL1500_.jpg"
                             alt="A ilha das almas selvagens" width="240px">
-                        <h2>A ilha das almas selvagens</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A ilha das almas selvagens')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>A ilha das almas selvagens</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A ilha das almas selvagens')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="Frankenstein"
                         onclick="openBookPage('Frankenstein', 'Marry Shelly', '50.00', 'https:/th.bing.com/th/id/OIP.Upr8LqaOgM7Qg4J0JttfjAHaLc?rs=1&pid=ImgDetMain')">
                         <img src="https://th.bing.com/th/id/OIP.Upr8LqaOgM7Qg4J0JttfjAHaLc?rs=1&pid=ImgDetMain"
                             alt="Frankenstein" width="250px">
-                        <h2>Frankenstein</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Frankenstein')">Ver semelhantes</button>
+                        <div class="info-container">
+                            <h2>Frankenstein</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Frankenstein')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="A noite_dos_motos_vivos"
                         onclick="openBookPage('A noite dos mortos vivos', 'Jonh Russo','25.00','https:media.fstatic.com/W55pXqE3a_bLRKTQVw56v27QavQ=/290x478/smart/media/movies/covers/2018/10/3_Imagem.jpg')">
                         <img src="https://media.fstatic.com/W55pXqE3a_bLRKTQVw56v27QavQ=/290x478/smart/media/movies/covers/2018/10/3_Imagem.jpg"
                             alt=" A noite dos mortos vivos" width="240px">
-                        <h2> A noite dos mortos vivos</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A noite dos mortos vivos')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2> A noite dos mortos vivos</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A noite dos mortos vivos')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="A ilha do Dr.Moreau"
                         onclick="openBookPage('A ilha do Dr.Moreau', 'H.g WELLS','25.00','https:livrariadacartola.com.br/wp-content/uploads/2024/01/capa-a-ilha-do-dr-moreau.jpg')">
                         <img src="https://livrariadacartola.com.br/wp-content/uploads/2024/01/capa-a-ilha-do-dr-moreau.jpg"
                             width="250px" alt=" A noite dos mortos vivos">
-                        <h2>A ilha dos Dr.Moreau</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A ilha do Dr. Moreau')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>A ilha dos Dr.Moreau</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A ilha do Dr. Moreau')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                 </div>
+
+
                 <button class="button" id="nextButton3">▶</button>
             </div>
             <h1>Drama</h1>
@@ -354,84 +441,112 @@
                 <button class="button" id="prevButton4">◀</button>
                 <div class="BOOKS" id="booksContainer4">
                     <div class="l1" id="Hamlet"
-                        onclick="openBookPage('Hamlet','William Shakespeare','12,30','https:projectoadamastor.org/wp-content/uploads/2015/10/Hamlet-Capa.jpg')">
+                        onclick="openBookPage('Hamlet','William Shakespeare','12,30','https://projectoadamastor.org/wp-content/uploads/2015/10/Hamlet-Capa.jpg')">
                         <img src="https://projectoadamastor.org/wp-content/uploads/2015/10/Hamlet-Capa.jpg"
                             alt="Capa Hamlet" width="250px">
-                        <h2>Hamlet</h2>
-                        <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('Hamlet')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Hamlet</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Hamlet')">Ver semelhantes</button>
+                        </div>
                     </div>
 
                     <div class="l1" id="RomeuJulieta"
-                        onclick="openBookPage('Romeu e Julieta','William Shakespeare','16,39','https:/m.media-amazon.com/images/I/719trP22IcL._AC_UF1000%2C1000_QL80_.jpg')">
-                        <img src="https://m.media-amazon.com/images/I/719trP22IcL._AC_UF1000%2C1000_QL80_.jpg"
+                        onclick="openBookPage('Romeu e Julieta','William Shakespeare','16,39','https://m.media-amazon.com/images/I/719trP22IcL._AC_UF1000,1000_QL80_.jpg')">
+                        <img src="https://m.media-amazon.com/images/I/719trP22IcL._AC_UF1000,1000_QL80_.jpg"
                             alt="Capa Romeu e Julieta" width="250px">
-                        <h2>Romeu e Julieta</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Romeu e Julieta')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Romeu e Julieta</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Romeu e Julieta')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="o-morro-dos-ventos-uivantes"
-                        onclick="openBookPage('O Morro dos Ventos Uivantes', 'Emily Brontë', '19.90', 'https:/http2.mlstatic.com/D_NQ_NP_2X_989146-MLU77723053267_072024-F.webp')">
+                        onclick="openBookPage('O Morro dos Ventos Uivantes', 'Emily Brontë', '19.90', 'https://http2.mlstatic.com/D_NQ_NP_2X_989146-MLU77723053267_072024-F.webp')">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_2X_989146-MLU77723053267_072024-F.webp"
                             width="250px">
-                        <h2>O Morro dos Ventos Uivantes</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O Morro dos Ventos Uivantes')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>O Morro dos Ventos Uivantes</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O Morro dos Ventos Uivantes')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="os-miseraveis"
-                        onclick="openBookPage('Os Miseráveis', 'Victor Hugo', '19.60', 'https:/http2.mlstatic.com/D_NQ_NP_2X_927426-MLU50535010087_062022-F.webp')">
+                        onclick="openBookPage('Os Miseráveis', 'Victor Hugo', '19.60', 'https://http2.mlstatic.com/D_NQ_NP_2X_927426-MLU50535010087_062022-F.webp')">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_2X_927426-MLU50535010087_062022-F.webp"
                             width="250px">
-                        <h2>Os Miseráveis</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Os Miseráveis')">Ver semelhantes</button>
+                        <div class="info-container">
+                            <h2>Os Miseráveis</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Os Miseráveis')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="a-revolucao-dos-bichos"
-                        onclick="openBookPage('A Revolução dos Bichos', 'George Orwell', '29.90', 'https:/http2.mlstatic.com/D_NQ_NP_2X_970788-MLB46598459639_072021-F.webp')">
+                        onclick="openBookPage('A Revolução dos Bichos', 'George Orwell', '29.90', 'https://http2.mlstatic.com/D_NQ_NP_2X_970788-MLB46598459639_072021-F.webp')">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_2X_970788-MLB46598459639_072021-F.webp"
                             width="270px">
-                        <h2>A Revolução dos Bichos</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A Revolução dos Bichos')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>A Revolução dos Bichos</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A Revolução dos Bichos')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="cem-anos-de-solidao"
-                        onclick="openBookPage('Cem Anos de Solidão', 'Gabriel García Márquez', '12.89', 'https:/th.bing.com/th/id/R.dadc528c8178bddf6d3104415dab47de?rik=9zsbuOytFeKjig&riu=http%3a%2f%2fstatic.fnac-static.com%2fmultimedia%2fPT%2fimages_produits%2fPT%2fZoomPE%2f4%2f1%2f3%2f9789722000314.jpg&ehk=tJQP7bAkoucPC%2b0aNA4RBeil%2f30HnQQyMxtewLxIkYM%3d&risl=&pid=ImgRaw&r=0')">
+                        onclick="openBookPage('Cem Anos de Solidão', 'Gabriel García Márquez', '12.89', 'https:th.bing.com/th/id/R.dadc528c8178bddf6d3104415dab47de?rik=9zsbuOytFeKjig&riu=http%3a%2f%2fstatic.fnac-static.com%2fmultimedia%2fPT%2fimages_produits%2fPT%2fZoomPE%2f4%2f1%2f3%2f9789722000314.jpg')">
                         <img src="https://th.bing.com/th/id/R.dadc528c8178bddf6d3104415dab47de?rik=9zsbuOytFeKjig&riu=http%3a%2f%2fstatic.fnac-static.com%2fmultimedia%2fPT%2fimages_produits%2fPT%2fZoomPE%2f4%2f1%2f3%2f9789722000314.jpg&ehk=tJQP7bAkoucPC%2b0aNA4RBeil%2f30HnQQyMxtewLxIkYM%3d&risl=&pid=ImgRaw&r=0"
                             width="240px">
-                        <h2>Cem Anos de Solidão</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Cem Anos de Solidão')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Cem Anos de Solidão</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Cem Anos de Solidão')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="a-metamorfose"
                         onclick="openBookPage('A Metamorfose', 'Franz Kafka', '25.75', 'https:/http2.mlstatic.com/D_NQ_NP_2X_612685-MLU69871993230_062023-F.webp')">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_2X_612685-MLU69871993230_062023-F.webp"
                             width="250px">
-                        <h2>A Metamorfose</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A Metamorfose')">Ver semelhantes</button>
+                        <div class="info-container">
+                            <h2>A Metamorfose</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A Metamorfose')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="o-sol-e-para-todos"
                         onclick="openBookPage('O Sol é para Todos', 'Harper Lee', '25.00', 'https:/th.bing.com/th/id/OIP.1Vd4RqiniFcROkWIrQbaJwHaJl?rs=1&pid=ImgDetMain')">
                         <img src="https://th.bing.com/th/id/OIP.1Vd4RqiniFcROkWIrQbaJwHaJl?rs=1&pid=ImgDetMain"
                             width="270px">
-                        <h2>O Sol é para Todos</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O Sol é para Todos')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>O Sol é para Todos</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O Sol é para Todos')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="A casa dos espiritos"
-                        onclick="openBookPage(' A casa dos espiritos', 'Isabel Alendre', '25.00', 'https:static.fnac-static.com/multimedia/PT/images_produits/PT/ZoomPE/7/5/4/9789720044457/tsp20130314200814/A-Casa-dos-Espiritos.jpg')">
+                        onclick="openBookPage('A casa dos espiritos', 'Isabel Allende', '25.00', 'https://static.fnac-static.com/multimedia/PT/images_produits/PT/ZoomPE/7/5/4/9789720044457/tsp20130314200814/A-Casa-dos-Espiritos.jpg')">
                         <img src="https://static.fnac-static.com/multimedia/PT/images_produits/PT/ZoomPE/7/5/4/9789720044457/tsp20130314200814/A-Casa-dos-Espiritos.jpg"
                             width="250px">
-                        <h2>A casa dos Espiritos</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A casa dos Espiritos')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>A casa dos Espiritos</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A casa dos Espiritos')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                 </div>
                 <button class="button" id="nextButton4">▶</button>
             </div>
@@ -439,71 +554,96 @@
             <div class="container">
                 <button class="button" id="prevButton5">◀</button>
                 <div class="BOOKS" id="booksContainer5">
-                     <div class="l1" id="1984"
+                    <div class="l1" id="1984"
                         onclick="openBookPage('1984', 'George Orwell', '30.50', 'https:th.bing.com/th/id/OIP.nFjE2i5jq3UrRgPFyqmg_gHaLI?rs=1&pid=ImgDetMain')">
                         <img src="https://th.bing.com/th/id/OIP.nFjE2i5jq3UrRgPFyqmg_gHaLI?rs=1&pid=ImgDetMain" alt=""
                             width="250px">
-                        <h2>1984</h2>
-                        <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('1984')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>1984</h2>
+                            <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('1984')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="Fundação"
-                        onclick="openBookPage('Fundação', 'Issac Asimov', '50.44', 'https:/static.wixstatic.com/media/4d0333_a2067316b50f4b6581e0058fbbda13c7~mv2.jpg/v1/fill/w_322,h_500,al_c,q_80,enc_auto/4d0333_a2067316b50f4b6581e0058fbbda13c7~mv2.jpghttps:/th.bing.com/th/id/OIP.ULeQI9-bgpTKs4brlmzw1AHaLE?rs=1&pid=ImgDetMain')">
-                        <img src="https://static.wixstatic.com/media/4d0333_a2067316b50f4b6581e0058fbbda13c7~mv2.jpg/v1/fill/w_322,h_500,al_c,q_80,enc_auto/4d0333_a2067316b50f4b6581e0058fbbda13c7~mv2.jpg"
+                        onclick="openBookPage('Fundação', 'Issac Asimov', '50.44', 'https:/static.wixstatic.com/media/...')">
+                        <img src="https://static.wixstatic.com/media/4d0333_a2067316b50f4b6581e0058fbbda13c7~mv2.jpg"
                             width="250px">
-                        <h2>Fundação</h2>
-                        <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('Fundação')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Fundação</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Fundação')">Ver semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="admiravel"
                         onclick="openBookPage('Adimiravel mundo novo', 'Aldous Huxley', '29.50', 'https:th.bing.com/th/id/OIP.dhTb8w_S4WbSLBQ0u6afxwAAAA?rs=1&pid=ImgDetMain')">
                         <img src="https://th.bing.com/th/id/OIP.dhTb8w_S4WbSLBQ0u6afxwAAAA?rs=1&pid=ImgDetMain"
                             width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">Adimirável mundo novo</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Admirável mundo novo')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Adimirável mundo novo</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Admirável mundo novo')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="Snow crash"
                         onclick="openBookPage('Snow crash', 'Neal stephenson', '22.90', 'https:www.businessinsider.de/wp-content/uploads/2016/11/snow-crash.jpg')">
                         <img src="https://www.businessinsider.de/wp-content/uploads/2016/11/snow-crash.jpg"
                             width="255px">
-                        <h2 style="color: rgb(255, 255, 255);">Snow crash</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Snow crash')">Ver semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Snow crash</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Snow crash')">Ver semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="o pintassislgo"
                         onclick="openBookPage('o pintassislgo', 'donna tart', '43.90', 'https:i0.wp.com/bibliotecas.cm-arganil.pt/wp-content/uploads/2018/04/o-pintassilgo.jpg?fit=955%2C1440&ssl=1')">
                         <img src="https://i0.wp.com/bibliotecas.cm-arganil.pt/wp-content/uploads/2018/04/o-pintassilgo.jpg?fit=955%2C1440&ssl=1"
                             width="255px">
-                        <h2 style="color: rgb(255, 255, 255);">o pintassislgo</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O Pintassilgo')">Ver semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">o pintassislgo</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O Pintassilgo')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="O tempo e vento"
                         onclick="openBookPage('O tempo e vento', 'Erico Verissimo', '25.60', 'https:/images-na.ssl-images-amazon.com/images/I/918uO4EaD%2BL.jpg')">
                         <img src="https://images-na.ssl-images-amazon.com/images/I/918uO4EaD%2BL.jpg" width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">O tempo e vento parte 1: continente</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O tempo e o vento')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">O tempo e vento parte 1: continente</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O tempo e o vento')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="O tempo e vento2"
-                        onclick="openBookPage('O tempo e vento2', 'Erico Verissimo', '25.60', 'https:/image.slidesharecdn.com/otempoeovento-oretrato-ericoverissimo-150703222558-lva1-app6892/95/o-tempo-e-o-vento-o-retrato-erico-verissimo-1-638.jpg?cb=1435962770')">
+                        onclick="openBookPage('O tempo e vento2', 'Erico Verissimo', '25.60', 'https:/image.slidesharecdn.com/...')">
                         <img src="https://image.slidesharecdn.com/otempoeovento-oretrato-ericoverissimo-150703222558-lva1-app6892/95/o-tempo-e-o-vento-o-retrato-erico-verissimo-1-638.jpg?cb=1435962770"
                             width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">O tempo e vento parte 2: continente</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O tempo e o vento2')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">O tempo e vento parte 2: continente</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O tempo e o vento2')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="THE_HOBBIT"
                         onclick="openBookPage('THE HOBBIT', 'J.R.R. Tolkien', '29.99', 'https:images.thenile.io/r1000/9780007458424.jpg')">
                         <img src="https://images.thenile.io/r1000/9780007458424.jpg" width="250px">
-                        <h2> The hobbit</h2>
-                        <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('O Hobbit')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>The hobbit</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O Hobbit')">Ver semelhantes</button>
+                        </div>
                     </div>
+
                 </div>
                 <button class="button" id="nextButton5">▶</button>
             </div>
@@ -513,24 +653,26 @@
                 <button class="button" id="prevButton6">◀</button>
                 <div class="BOOKS" id="booksContainer6">
                     <div class="l1" id="Verity"
-                        onclick="openBookPage('Verity','Colleen Hoover','32,94','https:m.media-amazon.com/images/I/9171o6AmnCL._UF1000%2C1000_QL80_.jpg')">
-                        <img src="https://m.media-amazon.com/images/I/9171o6AmnCL._UF1000%2C1000_QL80_.jpg"
+                        onclick="openBookPage('Verity','Colleen Hoover','32.94','https://m.media-amazon.com/images/I/9171o6AmnCL._UF1000,1000_QL80_.jpg')">
+                        <img src="https://m.media-amazon.com/images/I/9171o6AmnCL._UF1000,1000_QL80_.jpg"
                             alt="Capa Verity" width="250px">
                         <h2>Verity</h2>
                         <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('Verity')">Ver
                             semelhantes</button>
                     </div>
+
                     <div class="l1" id="orgulho-e-preconceito"
-                        onclick="openBookPage('Orgulho e preconceito', 'Jane Austen', '20.99', 'https:/images-na.ssl-images-amazon.com/images/I/91wc-3d0mEL.jpg')">
+                        onclick="openBookPage('Orgulho e Preconceito', 'Jane Austen', '20.99', 'https://images-na.ssl-images-amazon.com/images/I/91wc-3d0mEL.jpg')">
                         <img src="https://images-na.ssl-images-amazon.com/images/I/91wc-3d0mEL.jpg" width="250px">
                         <h2 style="color: rgb(255, 255, 255);">Orgulho e Preconceito</h2>
                         <button class="btn-semelhante"
                             onclick="event.stopPropagation(); verSemelhantes('Orgulho e Preconceito')">Ver
                             semelhantes</button>
                     </div>
+
                     <div class="l1" id="CrimeCastigo"
-                        onclick="openBookPage('Crime e Castigo','Fiódor Dostoiévski','69,28','https:/m.media-amazon.com/images/I/71Gmavgu3ZL._AC_UF1000%2C1000_QL80_.jpg')">
-                        <img src="https://m.media-amazon.com/images/I/71Gmavgu3ZL._AC_UF1000%2C1000_QL80_.jpg"
+                        onclick="openBookPage('Crime e Castigo','Fiódor Dostoiévski','69.28','https://m.media-amazon.com/images/I/71Gmavgu3ZL._AC_UF1000,1000_QL80_.jpg')">
+                        <img src="https://m.media-amazon.com/images/I/71Gmavgu3ZL._AC_UF1000,1000_QL80_.jpg"
                             alt="Capa Crime e Castigo" width="250px">
                         <h2>Crime e Castigo</h2>
                         <button class="btn-semelhante"
@@ -539,7 +681,7 @@
                     </div>
 
                     <div class="l1" id="NoitesBrancas"
-                        onclick="openBookPage('Noites Brancas','Fiódor Dostoiévski','11,50','https:/www.presenca.pt/cdn/shop/products/01210018_Noites_Brancas.jpg?v=1658911133')">
+                        onclick="openBookPage('Noites Brancas','Fiódor Dostoiévski','11.50','https://www.presenca.pt/cdn/shop/products/01210018_Noites_Brancas.jpg?v=1658911133')">
                         <img src="https://www.presenca.pt/cdn/shop/products/01210018_Noites_Brancas.jpg?v=1658911133"
                             alt="Capa Noites Brancas" width="250px">
                         <h2>Noites Brancas</h2>
@@ -548,30 +690,33 @@
                     </div>
 
                     <div class="l1" id="ps-eu-te-amo"
-                        onclick="openBookPage('P.S eu te amo', 'Cecilia Ahern', '21.35', 'https:/http2.mlstatic.com/D_NQ_NP_889524-MLU71324465531_082023-O.webp')">
+                        onclick="openBookPage('P.S. Eu Te Amo', 'Cecilia Ahern', '21.35', 'https://http2.mlstatic.com/D_NQ_NP_889524-MLU71324465531_082023-O.webp')">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_889524-MLU71324465531_082023-O.webp" width="250px">
                         <h2 style="color: rgb(255, 255, 255);">P.S. Eu Te Amo</h2>
                         <button class="btn-semelhante"
                             onclick="event.stopPropagation(); verSemelhantes('P.S. Eu Te Amo')">Ver semelhantes</button>
                     </div>
-                    <div class="l1" id="um amor para recordar"
-                        onclick="openBookPage('um Amor para recordar', 'nicolas sparks', '29.30', 'https:m.media-amazon.com/images/I/71jeQnaNsJL._SL1358_.jpg')">
+
+                    <div class="l1" id="um-amor-para-recordar"
+                        onclick="openBookPage('Um Amor para Recordar', 'Nicolas Sparks', '29.30', 'https://m.media-amazon.com/images/I/71jeQnaNsJL._SL1358_.jpg')">
                         <img src="https://m.media-amazon.com/images/I/71jeQnaNsJL._SL1358_.jpg" width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">um Amor para recordar</h2>
+                        <h2 style="color: rgb(255, 255, 255);">Um Amor para Recordar</h2>
                         <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Um amor para recordar')">Ver
+                            onclick="event.stopPropagation(); verSemelhantes('Um Amor para Recordar')">Ver
                             semelhantes</button>
                     </div>
+
                     <div class="l1" id="um-dia"
-                        onclick="openBookPage('Um dia', 'David Richolls', '22.30', 'https:/th.bing.com/th/id/OIP.gdLTbPcZMHUXljoOkj0q-QAAAA?w=129&h=195&c=7&r=0&o=5&pid=1.7')">
+                        onclick="openBookPage('Um Dia', 'David Nicholls', '22.30', 'https://th.bing.com/th/id/OIP.gdLTbPcZMHUXljoOkj0q-QAAAA?w=129&h=195&c=7&r=0&o=5&pid=1.7')">
                         <img src="https://th.bing.com/th/id/OIP.gdLTbPcZMHUXljoOkj0q-QAAAA?w=129&h=195&c=7&r=0&o=5&pid=1.7"
                             width="250px">
                         <h2 style="color: rgb(255, 255, 255);">Um Dia</h2>
                         <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('Um Dia')">Ver
                             semelhantes</button>
                     </div>
+
                     <div class="l1" id="amor-nos-tempos"
-                        onclick="openBookPage('O amor nos tempos de cólera', 'Gabriel Garcia Marquez', '28.00', 'https:/1.bp.blogspot.com/--Z2RZe4dQa4/YV7BjoIBU2I/AAAAAAAAA0Q/o4IoJ9xfbMgEnHuZIMGTLNy0Swch6YxZgCLcBGAsYHQ/s800/1366212_0.jpg')">
+                        onclick="openBookPage('O Amor nos Tempos de Cólera', 'Gabriel Garcia Marquez', '28.00', 'https://1.bp.blogspot.com/--Z2RZe4dQa4/YV7BjoIBU2I/AAAAAAAAA0Q/o4IoJ9xfbMgEnHuZIMGTLNy0Swch6YxZgCLcBGAsYHQ/s800/1366212_0.jpg')">
                         <img src="https://1.bp.blogspot.com/--Z2RZe4dQa4/YV7BjoIBU2I/AAAAAAAAA0Q/o4IoJ9xfbMgEnHuZIMGTLNy0Swch6YxZgCLcBGAsYHQ/s800/1366212_0.jpg"
                             width="250px">
                         <h2 style="color: rgb(255, 255, 255);">O Amor nos Tempos de Cólera</h2>
@@ -579,16 +724,18 @@
                             onclick="event.stopPropagation(); verSemelhantes('O Amor nos Tempos de Cólera')">Ver
                             semelhantes</button>
                     </div>
+
                     <div class="l1" id="dom-casmurro"
-                        onclick="openBookPage('Dom Casmurro', 'Machado de Assis', '35.00', 'https:/www.educacaoetransformacao.com.br/wp-content/uploads/2020/03/Dom-Casmurro-Capa-da-obra-1899.jpg')">
+                        onclick="openBookPage('Dom Casmurro', 'Machado de Assis', '35.00', 'https://www.educacaoetransformacao.com.br/wp-content/uploads/2020/03/Dom-Casmurro-Capa-da-obra-1899.jpg')">
                         <img src="https://www.educacaoetransformacao.com.br/wp-content/uploads/2020/03/Dom-Casmurro-Capa-da-obra-1899.jpg"
                             width="250px">
                         <h2 style="color: rgb(255, 255, 255);">Dom Casmurro</h2>
                         <button class="btn-semelhante"
                             onclick="event.stopPropagation(); verSemelhantes('Dom Casmurro')">Ver semelhantes</button>
                     </div>
+
                     <div class="l1" id="memorias-postumas-de-bras-cubas"
-                        onclick="openBookPage('Memórias Póstumas de Brás Cubas', 'Machado de Assis', '23.40', 'https:www.lpm.com.br/livros/imagens/memorias_postumas_de_bras_cubas_nova_9788525422675_hd.jpg')">
+                        onclick="openBookPage('Memórias Póstumas de Brás Cubas', 'Machado de Assis', '23.40', 'https://www.lpm.com.br/livros/imagens/memorias_postumas_de_bras_cubas_nova_9788525422675_hd.jpg')">
                         <img src="https://www.lpm.com.br/livros/imagens/memorias_postumas_de_bras_cubas_nova_9788525422675_hd.jpg"
                             width="230px">
                         <h2 style="color: rgb(255, 255, 255);">Memórias Póstumas de Brás Cubas</h2>
@@ -596,6 +743,7 @@
                             onclick="event.stopPropagation(); verSemelhantes('Memórias Póstumas de Brás Cubas')">Ver
                             semelhantes</button>
                     </div>
+
                 </div>
                 <button class="button" id="nextButton6">▶</button>
             </div>
@@ -604,57 +752,64 @@
                 <button class="button" id="prevButton7">◀</button>
                 <div class="BOOKS" id="booksContainer7">
                     <div class="l1" id="dom-quixote"
-                        onclick="openBookPage('Dom Quixote', 'Miguel de Cervantes', '92.90', 'https:/www.moderna.com.br/data/files/D9/02/CA/FC/ABF29310DABB929338A8A8A8/Capa_Dom%20Quixote_FINAL2-1.jpg')">
+                        onclick="openBookPage('Dom Quixote', 'Miguel de Cervantes', '92.90', 'https:www.moderna.com.br/data/files/D9/02/CA/FC/ABF29310DABB929338A8A8A8/Capa_Dom%20Quixote_FINAL2-1.jpg')">
                         <img src="https://www.moderna.com.br/data/files/D9/02/CA/FC/ABF29310DABB929338A8A8A8/Capa_Dom%20Quixote_FINAL2-1.jpg"
-                            width="250px">
+                            width="250px" alt="Capa Dom Quixote">
                         <h2 style="color: rgb(255, 255, 255);">Dom Quixote</h2>
                         <button class="btn-semelhante"
                             onclick="event.stopPropagation(); verSemelhantes('Dom Quixote')">Ver semelhantes</button>
                     </div>
+
                     <div class="l1" id="harry-potter-crianca-amaldicoada"
-                        onclick="openBookPage('Harry Potter e a Criança Amaldiçoada', 'Vários Autores', '368.99', 'https:/http2.mlstatic.com/D_NQ_NP_858895-MLU50632114961_072022-O.webp')">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_858895-MLU50632114961_072022-O.webp" width="250px">
+                        onclick="openBookPage('Harry Potter e a Criança Amaldiçoada', 'Vários Autores', '368.99', 'https:http2.mlstatic.com/D_NQ_NP_858895-MLU50632114961_072022-O.webp')">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_858895-MLU50632114961_072022-O.webp" width="250px"
+                            alt="Capa Harry Potter e a Criança Amaldiçoada">
                         <h2 style="color: rgb(255, 255, 255);">Harry Potter e a Criança Amaldiçoada</h2>
                         <button class="btn-semelhante"
                             onclick="event.stopPropagation(); verSemelhantes('Harry Potter e a Criança Amaldiçoada')">Ver
                             semelhantes</button>
                     </div>
-                    <div class="l1" id="A ilha do tesouro"
+
+                    <div class="l1" id="a-ilha-do-tesouro"
                         onclick="openBookPage('A ilha do tesouro', 'Robert Louis Stevenson', '28.90', 'https:th.bing.com/th/id/OIP.e4640MFHpBVgHOPVqRQGSAAAAA?rs=1&pid=ImgDetMain')">
                         <img src="https://th.bing.com/th/id/OIP.e4640MFHpBVgHOPVqRQGSAAAAA?rs=1&pid=ImgDetMain"
-                            width="250px">
-                        <h2 style="color: rgb(255, 255, 255);"> A ilha do tesouro</h2>
+                            width="250px" alt="Capa A Ilha do Tesouro">
+                        <h2 style="color: rgb(255, 255, 255);">A ilha do tesouro</h2>
                         <button class="btn-semelhante"
                             onclick="event.stopPropagation(); verSemelhantes('A ilha do tesouro')">Ver
                             semelhantes</button>
                     </div>
+
                     <div class="l1" id="senhor-dos-aneis"
-                        onclick="openBookPage('Senhor dos Anéis', 'J.R.R. Tolkien', '32.67', 'https:/images-na.ssl-images-amazon.com/images/I/51uNJPlhCzL._SX354_BO1,204,203,200_.jpg')">
+                        onclick="openBookPage('Senhor dos Anéis', 'J.R.R. Tolkien', '32.67', 'https:images-na.ssl-images-amazon.com/images/I/51uNJPlhCzL._SX354_BO1,204,203,200_.jpg')">
                         <img src="https://images-na.ssl-images-amazon.com/images/I/51uNJPlhCzL._SX354_BO1,204,203,200_.jpg"
-                            width="250px">
+                            width="250px" alt="Capa Senhor dos Anéis">
                         <h2 style="color: rgb(255, 255, 255);">Senhor dos Anéis</h2>
                         <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Senhor dos anéis')">Ver
+                            onclick="event.stopPropagation(); verSemelhantes('Senhor dos Anéis')">Ver
                             semelhantes</button>
                     </div>
+
                     <div class="l1" id="o-pequeno-principe"
-                        onclick="openBookPage('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', '10.50', 'https:/static.wixstatic.com/media/5801fd_a5aa121c7f0742849f3be2151a9a4ead~mv2.jpg/v1/fit/w_665%2Ch_993%2Cal_c%2Cq_80/file.jpg')">
+                        onclick="openBookPage('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', '10.50', 'https:static.wixstatic.com/media/5801fd_a5aa121c7f0742849f3be2151a9a4ead~mv2.jpg/v1/fit/w_665%2Ch_993%2Cal_c%2Cq_80/file.jpg')">
                         <img src="https://static.wixstatic.com/media/5801fd_a5aa121c7f0742849f3be2151a9a4ead~mv2.jpg/v1/fit/w_665%2Ch_993%2Cal_c%2Cq_80/file.jpg"
-                            width="235px">
+                            width="235px" alt="Capa O Pequeno Príncipe">
                         <h2 style="color: rgb(255, 255, 255);">O Pequeno Príncipe</h2>
                         <button class="btn-semelhante"
                             onclick="event.stopPropagation(); verSemelhantes('O Pequeno Príncipe')">Ver
                             semelhantes</button>
                     </div>
+
                     <div class="l1" id="homem-aranha-franked-red"
-                        onclick="openBookPage('Homem-Aranha: Franked Red', 'Yusuke Osawa', '47.00', 'https:/th.bing.com/th?id=OPHS.vAnaeHN008R5MA474C474&w=300&h=300&o=5&pid=21.1')">
+                        onclick="openBookPage('Homem-Aranha: Franked Red', 'Yusuke Osawa', '47.00', 'https:th.bing.com/th?id=OPHS.vAnaeHN008R5MA474C474&w=300&h=300&o=5&pid=21.1')">
                         <img src="https://th.bing.com/th?id=OPHS.vAnaeHN008R5MA474C474&w=300&h=300&o=5&pid=21.1"
-                            width="320px">
+                            width="320px" alt="Capa Homem-Aranha: Franked Red">
                         <h2 style="color: rgb(255, 255, 255);">Homem-Aranha: Franked Red</h2>
                         <button class="btn-semelhante"
                             onclick="event.stopPropagation(); verSemelhantes('Homem-Aranha: Franked Red')">Ver
                             semelhantes</button>
                     </div>
+
                 </div>
                 <button class="button" id="nextButton7">▶</button>
             </div>
@@ -663,159 +818,240 @@
                 <button class="button" id="prevButton8">◀</button>
                 <div class="BOOKS" id="booksContainer8">
                     <div class="l1" id="DB1"
-                        onclick="openBookPage('Volume 1 Dragon ball','Akira Toriama','22,87','https:www.arkade.com.br/wp-content/uploads/2013/05/manga-dragon-ball-1-akira-toriyama-panini-bonellihq_MLB-F-3707897667_012013-310x456.jpg')">
-                        <img src="https://www.arkade.com.br/wp-content/uploads/2013/05/manga-dragon-ball-1-akira-toriyama-panini-bonellihq_MLB-F-3707897667_012013-310x456.jpg"
+                        onclick="openBookPage('Volume 1 Dragon ball','Akira Toriama','22,87','https:/http2.mlstatic.com/D_NQ_NP_808262-MLB49865876801_052022-F.jpg')">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_808262-MLB49865876801_052022-F.jpg"
                             alt="Dragon Ball 1" width="250px" height="360px">
-                        <h2 style="color: white;">Volume 1 Dragon Ball</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation();verSemelhantes('Volume 1 Dragon Ball')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: white;">Volume 1 Dragon Ball</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation();verSemelhantes('Volume 1 Dragon Ball')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="DB2"
                         onclick="openBookPage('Volume 2 Dragon ball','Akira Toriama','22,77','https:/m.media-amazon.com/images/I/61qQ0TWwYzL._SY342_.jpg')">
                         <img src="https://m.media-amazon.com/images/I/61qQ0TWwYzL._SY342_.jpg" alt="Dragon Ball 1"
                             width="250px" height="360px">
-                        <h2 style="color: white;">Volume 2 Dragon Ball</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation();verSemelhantes('Volume 2 Dragon Ball')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: white;">Volume 2 Dragon Ball</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation();verSemelhantes('Volume 2 Dragon Ball')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="DB3"
                         onclick="openBookPage('Volume 3 Dragon Ball', 'Akira Toriyama', '18.90', 'https:/th.bing.com/th/id/OIP.Z1aDyckQ5fyPutkDCsIThwAAAA?rs=1&pid=ImgDetMain')">
-                        <img src="https://th.bing.com/th/id/OIP.Z1aDyckQ5fyPutkDCsIThwAAAA?rs=1&pid=ImgDetMain" width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 3 Dragon Ball</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 3 Dragon Ball')">Ver
-                            semelhantes</button>
+                        <img src="https://th.bing.com/th/id/OIP.Z1aDyckQ5fyPutkDCsIThwAAAA?rs=1&pid=ImgDetMain"
+                            width="250px">
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 3 Dragon Ball</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 3 Dragon Ball')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
+
                     <div class="l1" id="DB4"
                         onclick="openBookPage('Volume 4 Dragon Ball', 'Akira Toriyama', '18.90', 'https:/m.media-amazon.com/images/I/61STFDvrpVL._SL1000_.jpg')">
-                        <img src="https://m.media-amazon.com/images/I/61STFDvrpVL._SL1000_.jpg" width="260px" height="370px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 4 Dragon Ball</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 4 Dragon Ball')">Ver
-                            semelhantes</button>
+                        <img src="https://m.media-amazon.com/images/I/61STFDvrpVL._SL1000_.jpg" width="260px"
+                            height="370px">
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 4 Dragon Ball</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 4 Dragon Ball')">Ver
+                                semelhantes</button>
                         </div>
-                    <div class="l1" id="DB5"onclick="openBookPage('Volume 5 Dragon Ball', 'Akira Toriyama', '18.90', 'https:d14d9vp3wdof84.cloudfront.net/image/589816272436/image_22s13g9thp7sr73t5rbkn3a013/-S265-FWEBP')">
-                        <img src="https://d14d9vp3wdof84.cloudfront.net/image/589816272436/image_22s13g9thp7sr73t5rbkn3a013/-S265-FWEBP" width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 5 Dragon Ball</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 5 Dragon Ball')">Ver
-                            semelhantes</button>
+                    </div>
+
+                    <div class="l1" id="DB5"
+                        onclick="openBookPage('Volume 5 Dragon Ball', 'Akira Toriyama', '18.90', 'https:d14d9vp3wdof84.cloudfront.net/image/589816272436/image_22s13g9thp7sr73t5rbkn3a013/-S265-FWEBP')">
+                        <img src="https://d14d9vp3wdof84.cloudfront.net/image/589816272436/image_22s13g9thp7sr73t5rbkn3a013/-S265-FWEBP"
+                            width="250px">
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 5 Dragon Ball</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 5 Dragon Ball')">Ver
+                                semelhantes</button>
                         </div>
-                        <div class="l1" id="DB6" onclick="openBookPage('Volume 6 Dragon Ball', 'Akira Toriyama', '18.90', 'https:d14d9vp3wdof84.cloudfront.net/image/589816272436/image_ik8s9hc0mp7u1a9ttppba2v45f/-S265-FWEBP')">
-                        <img src="https://d14d9vp3wdof84.cloudfront.net/image/589816272436/image_ik8s9hc0mp7u1a9ttppba2v45f/-S265-FWEBP" width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 6 Dragon Ball</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 6 Dragon Ball')">Ver
-                            semelhantes</button>
+                    </div>
+
+                    <div class="l1" id="DB6"
+                        onclick="openBookPage('Volume 6 Dragon Ball', 'Akira Toriyama', '18.90', 'https:d14d9vp3wdof84.cloudfront.net/image/589816272436/image_ik8s9hc0mp7u1a9ttppba2v45f/-S265-FWEBP')">
+                        <img src="https://d14d9vp3wdof84.cloudfront.net/image/589816272436/image_ik8s9hc0mp7u1a9ttppba2v45f/-S265-FWEBP"
+                            width="250px">
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 6 Dragon Ball</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 6 Dragon Ball')">Ver
+                                semelhantes</button>
                         </div>
-                        
+                    </div>
+                    <div class="l1" id="DB7"
+                        onclick="openBookPage('Volume 7 Dragon Ball','Akira Toriyama','17.57','https:/th.bing.com/th/id/OIP.b4uVkN_3dzrDS17gnlM7_AAAAA?w=420&h=615&rs=1&pid=ImgDetMain')">
+                        <img src="https://th.bing.com/th/id/OIP.b4uVkN_3dzrDS17gnlM7_AAAAA?w=420&h=615&rs=1&pid=ImgDetMain"
+                            alt="">
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 7 Dragon Ball</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 7 Dragon Ball')">Ver
+                                semelhantes</button>
+                        </div>
+
+                    </div>
+                    <div class="l1" id="DB8"
+                        onclick="openBookPage('Volume 8 Dragon Ball','Akira Toriyama','16.99','https:th.bing.com/th/id/OIP.66ySxQPdpIZe6UmDpe58nwAAAA?w=354&h=520&rs=1&pid=ImgDetMain')">
+                        <img src="https://th.bing.com/th/id/OIP.66ySxQPdpIZe6UmDpe58nwAAAA?w=354&h=520&rs=1&pid=ImgDetMain"
+                            alt="">
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 8 Dragon Ball</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 8 Dragon Ball')">Ver
+                                semelhantes</button>
+                        </div>
+                    </div>
+                    <div class="l1" id="DB9"
+                        onclick="openBookPage('Volume 9 Dragon Ball','Akira Toriyama','16.99','https:/images.tcdn.com.br/img/img_prod/711386/dragon_ball_vol_9_4409_1_4cf06e838005a4e1db64c33378c07bbc_20231013174823.jpg')">
+                        <img src="https://images.tcdn.com.br/img/img_prod/711386/dragon_ball_vol_9_4409_1_4cf06e838005a4e1db64c33378c07bbc_20231013174823.jpg"
+                            alt="">
+                        <div class="info-container">
+                            <h2 style="color:rgb(255, 255, 255);">Volume 9 Dragon Ball</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(), verSemelhantes(' Volume 9 Dragon Ball')">Ver
+                                semelhantes</button>
+
+                        </div>
+                    </div>
+
                     <div class="l1" id="volume-16-dragon-ball"
                         onclick="openBookPage('Volume 16 Dragon Ball', 'Akira Toriyama', '18.90', 'https:/http2.mlstatic.com/D_NQ_NP_987320-MLU77344751946_072024-O.webp')">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_987320-MLU77344751946_072024-O.webp" width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 16 Dragon Ball</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 16 Dragon Ball')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: white;">Volume 16 Dragon Ball</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 16 Dragon Ball')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="volume-1-tokyo-ghoul"
                         onclick="openBookPage('Volume 1 Tokyo Ghoul', 'Sui Ishida', '18.90', 'https:d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421580364/tokyo-ghoul-vol-1-9781421580364_hr.jpg')">
                         <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421580364/tokyo-ghoul-vol-1-9781421580364_hr.jpg"
                             width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 1 Tokyo Ghoul</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 1 Tokyo Ghoul')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 1 Tokyo Ghoul</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 1 Tokyo Ghoul')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="volume-1-blame"
                         onclick="openBookPage('volume 1 Blame', 'Tsutomu Nihei', '27.00', 'https:/media.senscritique.com/media/000018352089/source_big/BLAME_Edition_Deluxe_tome_1.jpg')">
                         <img src="https://media.senscritique.com/media/000018352089/source_big/BLAME_Edition_Deluxe_tome_1.jpg"
                             width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 1 Blame!</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 1 Blame!')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 1 Blame!</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 1 Blame!')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="volume-10-neon-genesis-evangelion"
                         onclick="openBookPage('volume 10 neon Genesis Evangelion', 'Yoshiuki Sadamoto', '25.60', 'https:/m.media-amazon.com/images/I/71lT36JaUqL._SY425_.jpg')">
                         <img src="https://m.media-amazon.com/images/I/71lT36JaUqL._SY425_.jpg" width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 10 Neon Genesis Evangelion</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 10 Neon Genesis Evangelion')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 10 Neon Genesis Evangelion</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 10 Neon Genesis Evangelion')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="volume-57-one-piece"
                         onclick="openBookPage('volume 57 de One Piece', 'Eichiiro Oda', '38.90', 'https:/http2.mlstatic.com/D_NQ_NP_2X_825570-MLU50450120793_062022-F.webp')">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_2X_825570-MLU50450120793_062022-F.webp"
                             width="255px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 57 de One Piece</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 57 de One Piece')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 57 de One Piece</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 57 de One Piece')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="volume-1-the-ghost-in-the-shell"
                         onclick="openBookPage('volume 1 The Ghost in the Shell', 'Maramune Shidow', '32.90', 'https:/i.pinimg.com/736x/08/53/02/08530277988c7b5d4363645e4c8765af--ghost-in-the-shell-ghosts.jpg')">
                         <img src="https://i.pinimg.com/736x/08/53/02/08530277988c7b5d4363645e4c8765af--ghost-in-the-shell-ghosts.jpg"
                             width="255px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 1 The Ghost in the Shell</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 1 The Ghost in the Shell')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 1 The Ghost in the Shell</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 1 The Ghost in the Shell')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="akira"
                         onclick="openBookPage('Akira', 'Otomo Katsushiro', '28.50', 'https:/media.senscritique.com/media/000015332347/source_big/Akira.jpg')">
                         <img src="https://media.senscritique.com/media/000015332347/source_big/Akira.jpg" width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">Akira</h2>
-                        <button class="btn-semelhante" onclick="event.stopPropagation(); verSemelhantes('Akira')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Akira</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Akira')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="volume-3-de-gash-bell"
                         onclick="openBookPage('Volume 3 de Gash Bell', 'Makoto Raiku', '19.90', 'https:/m.media-amazon.com/images/I/81kL9MR9lbL._AC_UL320_.jpg')">
                         <img src="https://m.media-amazon.com/images/I/81kL9MR9lbL._AC_UL320_.jpg"
                             alt="Volume 3 de Gash Bell" width="250px">
-                        <h2>Volume 3 de Gash Bell</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 3 de Gash Bell')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Volume 3 de Gash Bell</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 3 de Gash Bell')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="volume-4-de-demon-slayer"
                         onclick="openBookPage('Volume 4 de Demon Slayer', 'Koyoharu Gotouge', '49.90', 'https:/m.media-amazon.com/images/I/91ZVONTZJGL._SY425_.jpg')">
                         <img src="https://m.media-amazon.com/images/I/91ZVONTZJGL._SY425_.jpg"
                             alt="Volume 4 de Demon Slayer" width="250px">
-                        <h2>Volume 4 de Demon Slayer</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 4 de Demon Slayer')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Volume 4 de Demon Slayer</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 4 de Demon Slayer')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="volume-1-de-final-fantasy"
                         onclick="openBookPage('Volume 1 de Final Fantasy', 'Nojima Kazushige', '59.90', 'https:/m.media-amazon.com/images/I/51g8Yis6fzL._SY445_SX342_.jpg')">
                         <img src="https://m.media-amazon.com/images/I/51g8Yis6fzL._SY445_SX342_.jpg"
                             alt="Volume 1 de Final Fantasy" width="250px">
-                        <h2>Volume 1 de Final Fantasy</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 1 Final Fantasy')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Volume 1 de Final Fantasy</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 1 Final Fantasy')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="volume-6-horimura"
                         onclick="openBookPage('Volume 6 Horimura', 'HERO', '29.90', 'https:/cdn.shopify.com/s/files/1/0572/5854/1241/products/9780316270137_manga-horimiya-6-primary_jpg_1946x.jpg?v=1676422102')">
                         <img src="https://cdn.shopify.com/s/files/1/0572/5854/1241/products/9780316270137_manga-horimiya-6-primary_jpg_1946x.jpg?v=1676422102"
                             width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 6 Horimura</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 6 Horimura')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 6 Horimura</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 6 Horimura')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
-
                     <div class="l1" id="volume-19-attack-on-titan"
                         onclick="openBookPage('volume 19 Attack on titan', 'Hajime Isayama', '26.44', 'https:/th.bing.com/th/id/OIP.ULeQI9-bgpTKs4brlmzw1AHaLE?rs=1&pid=ImgDetMain')">
                         <img src="https://th.bing.com/th/id/OIP.ULeQI9-bgpTKs4brlmzw1AHaLE?rs=1&pid=ImgDetMain"
                             width="250px">
-                        <h2 style="color: rgb(255, 255, 255);">Volume 19 Attack on Titan</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Volume 19 Attack on Titan')">Ver
-                            semelhantes</button>
-
+                        <div class="info-container">
+                            <h2 style="color: rgb(255, 255, 255);">Volume 19 Attack on Titan</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Volume 19 Attack on Titan')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                 </div>
                 <button class="button" id="nextButton8">▶</button>
@@ -828,98 +1064,126 @@
                         onclick="openBookPage('Confissões de Santo Agostinho', 'Santo Agostinho', '25.00', 'https:/http2.mlstatic.com/D_NQ_NP_2X_963238-MLB45005075468_022021-F.jpg')">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_2X_963238-MLB45005075468_022021-F.jpg" alt=""
                             width="250px">
-                        <h2>Confissões de Santo Agostinho</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Confissões de Santo Agostinho')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Confissões de
+                                <hr> Santo Agostinho
+                            </h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Confissões de Santo Agostinho')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="cristianismo"
                         onclick="openBookPage('Cristianismo Puro e Simples', 'C.S. Lewis', '25.00', 'https:cdn.sistemawbuy.com.br/arquivos/8c26639222dadffbe4f12a314301feba/produtos/6424962db07b3/cristianismo-puro-e-simples-edicao-especial-em-capa-dura-20201111085405-6424962e031c1.jpg')">
                         <img src="https:cdn.sistemawbuy.com.br/arquivos/8c26639222dadffbe4f12a314301feba/produtos/6424962db07b3/cristianismo-puro-e-simples-edicao-especial-em-capa-dura-20201111085405-6424962e031c1.jpg"
                             alt="Cristianismo Puro e Simples" width="250px">
-                        <h2>Cristianismo Puro e Simples</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Cristianismo Puro e Simples')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Cristianismo Puro e Simples</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Cristianismo Puro e Simples')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="Problema"
                         onclick="openBookPage('O Problema do Sofrimento', 'C.S. Lewis', '24.00', 'https:a-static.mlcdn.com.br/800x560/o-problema-do-sofrimento-c-s-lewis-8067702/komunhaolivrariacrista/10012630067/3ee9372d7d47fc1c1f1b3470e8ac2c79.jpg')">
                         <img src="https://a-static.mlcdn.com.br/800x560/o-problema-do-sofrimento-c-s-lewis-8067702/komunhaolivrariacrista/10012630067/3ee9372d7d47fc1c1f1b3470e8ac2c79.jpg"
                             alt="O Problema do Sofrimento" width="250px">
-                        <h2>O Problema do Sofrimento</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O Problema do Sofrimento')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>O Problema do Sofrimento</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O Problema do Sofrimento')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="em-seus-passos"
                         onclick="openBookPage('Em Seus Passos o Que Faria Jesus?', 'Charles Sheldon', '28.00', 'https:www.clcportugal.com/_CLCPortugal/images/products/original/169.jpg ')">
                         <img src="https://www.clcportugal.com/_CLCPortugal/images/products/original/169.jpg"
                             alt="Em Seus Passos o Que Faria Jesus?" width="250px">
-                        <h2>Em Seus Passos o Que Faria Jesus?</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Em Seus Passos o Que Faria Jesus?')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Em Seus Passos
+                                <hr> o Que Faria Jesus?
+                            </h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Em Seus Passos o Que Faria Jesus?')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="Conhecimento"
                         onclick="openBookPage('O Conhecimento do Deus Santo', 'A.W. Tozer', '26.00', 'https:www.saraivaconteudo.com.br/capas/32/download-o-conhecimento-do-santo-a-w-tozer-ler-online-pdf.jpg')">
                         <img src="https://www.saraivaconteudo.com.br/capas/32/download-o-conhecimento-do-santo-a-w-tozer-ler-online-pdf.jpg"
                             alt="O Conhecimento do Deus Santo" width="250px">
-                        <h2>O Conhecimento do Deus Santo</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O Conhecimento do Deus Santo')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>O Conhecimento do Deus Santo</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O Conhecimento do Deus Santo')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="maltrapilho"
                         onclick="openBookPage('O Evangelho Maltrapilho', 'Brennan Manning', '27.00', 'https:https:media.s-bol.com/qD1v6zKVWqRp/L7A68vj/550x830.jpg')">
                         <img src="https://media.s-bol.com/qD1v6zKVWqRp/L7A68vj/550x830.jpg"
                             alt="O Evangelho Maltrapilho" width="250px">
-                        <h2>O Evangelho Maltrapilho</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O Evangelho Maltrapilho')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>O Evangelho Maltrapilho</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O Evangelho Maltrapilho')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="cartas"
                         onclick="openBookPage('Cartas de um Diabo a seu Aprendiz', 'C.S. Lewis', '23.00', 'https:images-na.ssl-images-amazon.com/images/I/51Ix%2BvLKY4L.jpg')">
                         <img src="https://images-na.ssl-images-amazon.com/images/I/51Ix%2BvLKY4L.jpg"
                             alt="Cartas de um Diabo a seu Aprendiz" width="250px">
-                        <h2>Cartas de um Diabo a seu Aprendiz</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Cartas de um Diabo a seu Aprendiz')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Cartas de um Diabo a seu Aprendiz</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Cartas de um Diabo a seu Aprendiz')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="cidade-de-deus"
                         onclick="openBookPage('A Cidade de Deus', 'Santo Agostinho', '30.00', 'https:skoob.s3.amazonaws.com/livros/23283/A_CIDADE_DE_DEUS__VOL_2_1239534738B.jpg')">
                         <img src="https://skoob.s3.amazonaws.com/livros/23283/A_CIDADE_DE_DEUS__VOL_2_1239534738B.jpg"
                             alt="A Cidade de Deus" width="250px">
-                        <h2>A Cidade de Deus</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('A Cidade de Deus')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>A Cidade de Deus</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('A Cidade de Deus')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="imitacao-de-cristo"
                         onclick="openBookPage('Imitação de Cristo', 'Tomás de Kempis', '20.00', 'https:img.wook.pt/images/imitacao-de-cristo-tomas-de-kempis/MXwyMTQwNjcwOHwxNzI3NzA3NnwxNTE3ODQ4NjgwMDAw/500x')">
                         <img src="https://img.wook.pt/images/imitacao-de-cristo-tomas-de-kempis/MXwyMTQwNjcwOHwxNzI3NzA3NnwxNTE3ODQ4NjgwMDAw/500x"
                             alt="Imitação de Cristo" width="250px">
-                        <h2>Imitação de Cristo</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Imitação de Cristo')">Ver
-                            semelhantes</button>
+                        <div class="info-container">
+                            <h2>Imitação de Cristo</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Imitação de Cristo')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="o-peregrino"
                         onclick="openBookPage('O Peregrino', 'John Bunyan', '22.00', 'https:editoradosclassicos.com.br/451-medium_default/O_peregrino_-_John_Bunyan_-_Comentado.jpg')">
                         <img src="https://editoradosclassicos.com.br/451-medium_default/O_peregrino_-_John_Bunyan_-_Comentado.jpg"
                             alt="O Peregrino" width="250px">
-                        <h2>O Peregrino</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('O Peregrino')">Ver semelhantes</button>
+                        <div class="info-container">
+                            <h2>O Peregrino</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('O Peregrino')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                     <div class="l1" id="biblia-sagrada"
                         onclick="openBookPage('Bíblia Sagrada', 'Vários Autores', '59.90', 'https:/m.media-amazon.com/images/I/51vgAvVpPiL.jpg')">
                         <img src="https://m.media-amazon.com/images/I/51vgAvVpPiL.jpg" alt="Bíblia Sagrada"
                             width="270px">
-                        <h2>Bíblia Sagrada</h2>
-                        <button class="btn-semelhante"
-                            onclick="event.stopPropagation(); verSemelhantes('Bíblia Sagrada')">Ver semelhantes</button>
+                        <div class="info-container">
+                            <h2>Bíblia Sagrada</h2>
+                            <button class="btn-semelhante"
+                                onclick="event.stopPropagation(); verSemelhantes('Bíblia Sagrada')">Ver
+                                semelhantes</button>
+                        </div>
                     </div>
                 </div>
                 <button class="button" id="nextButton9">▶</button>
@@ -1078,14 +1342,14 @@
                     { title: "Verity", link: "https://m.media-amazon.com/images/I/9171o6AmnCL._UF1000%2C1000_QL80_.jpg", id: "Verity" },
                     { title: "Crime e Castigo", link: "https://m.media-amazon.com/images/I/71Gmavgu3ZL._AC_UF1000%2C1000_QL80_.jpg", id: "CrimeCastigo" },
                     { title: "Noites Brancas", link: "https://www.presenca.pt/cdn/shop/products/01210018_Noites_Brancas.jpg?v=1658911133", id: "NoitesBrancas" },
-                     { title: "1984", link: "https://th.bing.com/th/id/OIP.nFjE2i5jq3UrRgPFyqmg_gHaLI?rs=1&pid=ImgDetMain", id: "1984" },
-                    { title: "Volume 1 Dragon Ball", link: "https://www.arkade.com.br/wp-content/uploads/2013/05/manga-dragon-ball-1-akira-toriyama-panini-bonellihq_MLB-F-3707897667_012013-310x456.jpg", id: "DB1" },
+                    { title: "1984", link: "https://th.bing.com/th/id/OIP.nFjE2i5jq3UrRgPFyqmg_gHaLI?rs=1&pid=ImgDetMain", id: "1984" },
+                    { title: "Volume 1 Dragon Ball", link: "https://http2.mlstatic.com/D_NQ_NP_808262-MLB49865876801_052022-F.jpg", id: "DB1" },
                     { title: "Volume 2 Dragon Ball", link: "https://m.media-amazon.com/images/I/61qQ0TWwYzL._SY342_.jpg", id: "DB2" },
                     { title: "Volume 3 Dragon Ball", link: "https://m.media-amazon.com/images/I/61qQ0TWwYzL._SY342_.jpg", id: "DB3" },
                     { title: "Volume 4 Dragon Ball", link: "https://m.media-amazon.com/images/I/61qQ0TWwYzL._SY342_.jpg", id: "DB4" },
                     { title: "Volume 5 Dragon Ball", link: "https://m.media-amazon.com/images/I/61qQ0TWwYzL._SY342_.jpg", id: "DB5" },
                     { title: "Volume 6 Dragon Ball", link: "https://m.media-amazon.com/images/I/61qQ0TWwYzL._SY342_.jpg", id: "DB6" },
-                    { title: "Volume 7 Dragon Ball", link: "http://www.guiadosquadrinhos.com/edicao/ShowImage.aspx?id=101337&path=panini/d/dr01110107.jpg&w=400&h=593", id: "DB7" },
+                    { title: "Volume 7 Dragon Ball", link: "https://th.bing.com/th/id/OIP.b4uVkN_3dzrDS17gnlM7_AAAAA?w=420&h=615&rs=1&pid=ImgDetMain", id: "DB7" },
                     { title: "Volume 8 Dragon Ball", link: "https://m.media-amazon.com/images/I/61qQ0TWwYzL._SY342_.jpg", id: "DB8" },
                     { title: "Volume 9 Dragon Ball", link: "https://m.media-amazon.com/images/I/61qQ0TWwYzL._SY342_.jpg", id: "DB9" },
 
@@ -1148,119 +1412,20 @@
                 });
             </script>
         </section>
-        <br><br>
-
-
-        <section style="background-color: rgb(0, 0, 0); " class="colaboradores">
-            <div>
-
-                <h1 style="font-size: larger; color: aliceblue; text-align: center;
-                   height: 300px; font-family: 'Courier New', Courier, monospace;">Nossos colaboradores</h1>
-                <div class="nomes" style="color:white;">
-                    <ol>
-                        <li><strong>Ryan:</strong>
-                            <p>Foi o principal desenvolvedor deste site, atuando como programador do LoreOwl𓅓, projeto
-                                que está em desenvolvimento há 9 meses. Durante esse período, diversas funcionalidades
-                                foram adicionadas, sempre com foco no bem-estar do projeto e no seu desempenho geral.
-                            </p>
-                        </li>
-                        <li><strong>Daniel:</strong>
-                            <p>Contribuiu com a aquisição de materiais para o nosso projeto em Arduino.</p>
-                        </li>
-                        <li><strong>Eduarda:</strong>
-                            <p>Com sua liderança, organizou o grupo de forma eficiente, garantindo que cada membro
-                                desempenhasse seu papel corretamente. Além disso, deu sugestões valiosas e apoiou tanto
-                                o site quanto o projeto em Arduino, sempre motivando com sua icônica frase: <b
-                                    style="color: rgb(255, 60, 0);">"Vai dar certo, negrada!"</b></p>
-                        </li>
-                        <li><strong>Ligiane:</strong>
-                            <p>Também atuou na programação, sendo responsável pela criação da página de login.</p>
-                        </li>
-                        <li><strong>Luziely:</strong>
-                            <p>Foi essencial no apoio moral ao grupo.</p>
-                        </li>
-                        <li><strong>Edna:</strong>
-                            <p>Teve um papel importante em manter o grupo focado no projeto, orientando sobre os
-                                materiais que deveriam ser comprados.</p>
-                        </li>
-                        <li><strong>Hellany:</strong>
-                            <p>Ficou responsável por ajudar na construção da maquete do Arduino e contribuiu
-                                significativamente no design do site. Suas ideias ajudaram a tornar o projeto
-                                visualmente mais bonito e organizado.</p>
-                        </li>
-                        <li><strong>Fernanda:</strong>
-                            <p>Teve grande participação na construção da maquete.</p>
-                        </li>
-                    </ol>
-
-                    <br><br>
-                </div>
-            </div>
-        </section>
-        <main id="Sobre" class="Sobre">
-            <section>
-                <h1>Seja bem vindo a página de sobre do nosso site!</h1>
-                <p style="text-align: justify;">
-                    O <b style="color: rgb(0, 0, 0);">LoreOwl𓅓</b> nasceu com a missão de democratizar o acesso à
-                    leitura, especialmente para aqueles que não têm o hábito ou a oportunidade de ler com frequência.
-                    Por meio da venda de livros online e da leitura digital gratuita diretamente na plataforma,
-                    oferecemos uma experiência prática, acessível e moderna para quem deseja explorar o universo
-                    literário.
-                    <br><br>
-                    Antes de adotar o nome <b style="color: rgb(0, 0, 0);">"LoreOwl𓅓"</b>, o projeto era conhecido como
-                    "Fox Lore". Apesar da mudança de identidade, nossa essência permaneceu a mesma: incentivar a leitura
-                    entre os jovens e torná-la parte do seu cotidiano.
-                    <br><br>
-                    Ao longo de todo o desenvolvimento do site, nossa equipe se dedicou intensamente para criar um
-                    ambiente atrativo, intuitivo e alinhado ao estilo de vida do nosso público-alvo — jovens entre 14 e
-                    30 anos. Sabemos que muitos não têm o costume de buscar livros por iniciativa própria, e é por isso
-                    que o <b style="color: rgb(0, 0, 0);">LoreOwl𓅓</b> está aqui: para tornar o hábito da leitura mais
-                    acessível, interessante e conectado com a nova geração.
-                </p>
-
-            </section>
-            <br><br><br><br>
-            <div class="mdl"> <img src="/imgs/Captura de tela 2024-10-25 183248.png" alt="">
-            </div>
-        </main>
         <main id="Parceiros" class="Parceiros">
             <section>
                 <h1>Parceiros</h1>
                 <div class="Pars">
                     <div>
-                        <img src="./imgs/Seduc-CE.jpg" alt="" width="180px">
+                        <img src="" alt="" width="180px">
                     </div>
 
                     <div>
-                        <img src="./imgs/universidade.png" alt="" width="180px">
+                        <img src="" alt="" width="180px">
                     </div>
                 </div>
-                <section id="contatos" class="contatos">
-                    <h1>Contatos</h1>
-                    <div class="ctt-card">
-                        <form id="CARD">
-                            <h1>Contatos</h1>
-                            <div class="input-caixa">
-                                <input type="text" id="user-ctt" placeholder="Coloque seu nome completo">
-                            </div>
-                            <div class="input-caixa">
-                                <input type="email" id="email-ctt" placeholder="Coloque seu endereço email">
-                            </div>
-                            <div class="input-caixa">
-                                <input type="number" id="numero-ctt" placeholder="Coloque sua idade aqui">
-                            </div>
-                            <div class="input-caixa">
-                                <input type="text" placeholder="Coloque sua mensagem aqui...">
-                            </div>
-                            <h2>Nos envie uma mensagem no instagram!</h2>
-                            <a href="https://www.instagram.com/loreowl_2024/profilecard/?igsh=MT%7ChM2%7C2cGZ3Zg%3D%3D"><button
-                                    type="button" class="botao"> Enviar mensagem!</button></a>
-                        </form>
-                    </div>
-                    <footer style="text-align: center;">&copy;Desenvolvido por Ryan Chaves e equipe
-                        <br> Todos os direitos reservados
-                        <br>
-                    </footer>
+
+
         </main>
     </main>
     <script>
@@ -1343,18 +1508,23 @@
             }, 1000);
         });
     </script>
-   <!-- Botão flutuante da IA -->
-<div class="ia-float" onclick="abrirChat()">
-  🦉
-</div>
+    <!-- Botão flutuante da IA -->
+    <div class="ia-float" onclick="abrirChat()">
+        🦉
+    </div>
 
-<!-- Janela de chat -->
-<div class="chat-ia" id="chatIA" style="display: none;">
-  <div class="chat-header">📘 LoreOwl</div>
-  <div class="chat-body" id="chatBody"></div>
-  <input type="text" id="chatInput" placeholder="Digite sua pergunta..." onkeydown="if(event.key==='Enter') enviarPergunta()">
-  <script src="/IALOREOWL.js"></script>
-</div>
+    <!-- Janela de chat -->
+    <div class="chat-ia" id="chatIA" style="display: none;">
+        <div class="chat-header">📘Owl</div>
+        <div class="chat-body" id="chatBody"></div>
+        <input type="text" id="chatInput" placeholder="Digite sua pergunta..."
+            onkeydown="if(event.key==='Enter') enviarPergunta()">
+        <script src="/IALOREOWL.js"></script>
+    </div>
+    <footer style="text-align: center;">&copy;Desenvolvido por Ryan Chaves e equipe
+        <br> Todos os direitos reservados
+        <br>
+    </footer>
 
 </body>
 <footer>

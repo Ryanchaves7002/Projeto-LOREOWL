@@ -1,3 +1,7 @@
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const carrinhoItens = document.getElementById('carrinhoItens');
     const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
@@ -61,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         buyModal.style.display = 'none';
     });
 
+    
     // Limpar carrinho
     const limparBtn = document.getElementById('limparCarrinho');
     limparBtn?.addEventListener('click', () => {

@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Livro</title>
     <link rel="icon" href="./imgs/coruja.1.png">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="/css/style2.css">
 </head>
 
-<body class="livro">
-    <div class="Menu">
-        <h1>LoreOwl𓅓</h1>
+<body class="livro" id="principal">
+    <div class="Menu-livro">
+        <h1 class="h1-livro">LoreOwl𓅓</h1>
         <a class="A" style="color: white;" href="./gestao.html">Página principal</a>
         <a class="A" href="./usuario.html" style="color:white;">Voltar</a>
         <button class="cart-btn" id="cartBtn"> <span class="icon">🛒</span><span class="text"></span></button>
@@ -29,8 +29,8 @@
             <p class="descricao-livro" id="bookDescription"></p>
             <button class="btn" id="buyButton">Comprar</button>
             <button class="btn" id="readButton">Ler</button>
-           
-            
+
+
         </div>
     </main>
     <div id="buyModal" class="modal">
@@ -54,139 +54,226 @@
                         <option value="pix">PIX</option>
                     </select>
                 </div>
+                <div id="credit-card-info">
+                    <input type="text" id="cardNumber" placeholder="Número do cartão">
+                    <input type="text" id="cardExpiry" placeholder="Validade">
+                </div>
+
+
+                <div id="boleto-info" style="display:none">
+                    <input type="text" id="cpfBoleto" placeholder="CPF do pagador">
+                </div>
+
+
+
+                <div id="pix-info" class="payment-option">
+                    <p>Escaneie o QR Code para pagamento via Pix:</p>
+                    <img class="qr-code"
+                        src="https://api.qrserver.com/v1/create-qr-code/?data=PagamentoPix123&size=200x200"
+                        alt="QR Code Pix">
+                        <input type="text" id="chavePix" placeholder="Chave Pix ">
+                </div>
                 <button type="submit" class="btn-submit">Finalizar Compra</button>
+
             </form>
         </div>
     </div>
+
     <script>
-       
-document.addEventListener("DOMContentLoaded", function () {
-    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
-   // if (!usuarioLogado) {
-        //alert("Você precisa estar logado para acessar esta página.");
-        //window.location.href = "loginpage.html";
-       // return;
-    //}
 
-    const paginaAtual = window.location.pathname;
 
-    const isGestao = paginaAtual.includes("gestao.html");
-
-    if (isGestao) {
-        const buyButton = document.getElementById("buyButton");
-        const readButton = document.getElementById("readButton");
-        if (buyButton) buyButton.style.display = "none";
-        if (readButton) readButton.style.display = "none";
-    }
-
-    const livro = JSON.parse(localStorage.getItem("livroSelecionado"));
-    const params = new URLSearchParams(window.location.search);
-
-    if (livro) {
-        displayBookInfo(livro);
-    } else if (params.has('title')) {
-        const bookFromUrl = {
-            titulo: params.get('title'),
-            autor: params.get('author') || 'Autor desconhecido',
-            preco: params.get('price') || '0.00',
-            img: params.get('img') || '',
-            descricao: params.get('description') || 'Descrição não disponível'
-        };
-        displayBookInfo(bookFromUrl);
-    } else {
-        window.location.href = "livro.html";
-    }
-
-    setupEventListeners(isGestao);
-});
-
-function displayBookInfo(book) {
-    document.getElementById('bookTitle').innerText = book.titulo;
-    document.getElementById('bookAuthor').innerText = "Autor: " + book.autor;
-    document.getElementById('bookPrice').innerText = "Preço: R$ " + book.preco;
-
-    if (book.img) {
-        document.getElementById('bookImg').src = book.img;
-        document.getElementById('bookImg').alt = `Capa do livro ${book.titulo}`;
-    }
-}
-
-function setupEventListeners(isGestao) {
-    const buyButton = document.getElementById('buyButton');
-    const readButton = document.getElementById('readButton');
-    const cartBtn = document.getElementById("cartBtn");
-    const cartText = document.querySelector("#cartBtn .text");
-    const buyModal = document.getElementById('buyModal');
-    const closeModal = document.getElementById('closeModal');
-    const purchaseForm = document.getElementById('purchaseForm');
-
-    if (buyButton && !isGestao) {
-        buyButton.addEventListener('click', () => {
-            buyModal.style.display = 'block';
-        });
-    }
-
-    if (readButton && !isGestao) {
-        readButton.addEventListener('click', () => {
-            const livro = JSON.parse(localStorage.getItem("livroSelecionado")) || {
-                titulo: document.getElementById('bookTitle').innerText,
-                autor: document.getElementById('bookAuthor').innerText.replace("Autor: ", "")
-            };
-            window.location.href = `leitura.html?title=${encodeURIComponent(livro.titulo)}&author=${encodeURIComponent(livro.autor)}`;
-        });
-    }
-
-    if (cartBtn && !isGestao) {
-        cartBtn.addEventListener("click", function () {
-            if (cartBtn.classList.contains("success")) return;
-
-            const livro = {
-                titulo: document.getElementById('bookTitle').innerText,
-                autor: document.getElementById('bookAuthor').innerText.replace("Autor: ", ""),
-                preco: document.getElementById('bookPrice').innerText.replace("Preço: R$ ", ""),
-                img: document.getElementById('bookImg').src
+        document.addEventListener("DOMContentLoaded", function () {
+            const paymentSelect = document.getElementById('payment');
+            const options = {
+                "credit-card": document.getElementById('credit-card-info'),
+                "boleto": document.getElementById('boleto-info'),
+                "pix": document.getElementById('pix-info')
             };
 
-            const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-            carrinho.push(livro);
-            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+            if (paymentSelect) {
+                paymentSelect.addEventListener('change', function () {
+                    for (let opt in options) {
+                        options[opt].style.display = 'none';
+                    }
+                    const selected = paymentSelect.value;
+                    if (options[selected]) {
+                        options[selected].style.display = 'block';
+                    }
+                });
+            }
 
-            cartBtn.classList.add("success");
-            cartText.classList.add("success");
-            cartText.classList.remove("text");
-            cartText.innerText = "Adicionado!";
-            
+            const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
-            setTimeout(() => {
-                cartBtn.classList.remove("success");
-                cartText.classList.remove("success");
-                cartText.innerText = "";
-            }, 2000);
+            const paginaAtual = window.location.pathname;
+            const isGestao = paginaAtual.includes("gestao.html");
+
+            if (isGestao) {
+                const buyButton = document.getElementById("buyButton");
+                const readButton = document.getElementById("readButton");
+                if (buyButton) buyButton.style.display = "none";
+                if (readButton) readButton.style.display = "none";
+            }
+
+            const livro = JSON.parse(localStorage.getItem("livroSelecionado"));
+            const params = new URLSearchParams(window.location.search);
+
+            if (livro) {
+                displayBookInfo(livro);
+            } else if (params.has('title')) {
+                const bookFromUrl = {
+                    titulo: params.get('title'),
+                    autor: params.get('author') || 'Autor desconhecido',
+                    preco: params.get('price') || '0.00',
+                    img: params.get('img') || '',
+                    descricao: params.get('description') || 'Descrição não disponível'
+                };
+                displayBookInfo(bookFromUrl);
+            } else {
+                window.location.href = "livro.html";
+            }
+
+            setupEventListeners(isGestao);
         });
-    }
 
-    closeModal?.addEventListener('click', () => {
-        buyModal.style.display = 'none';
-    });
+        function displayBookInfo(book) {
+            document.getElementById('bookTitle').innerText = book.titulo;
+            document.getElementById('bookAuthor').innerText = "Autor: " + book.autor;
+            document.getElementById('bookPrice').innerText = "Preço: R$ " + book.preco;
 
-    window.addEventListener('click', (event) => {
-        if (event.target === buyModal) {
-            buyModal.style.display = 'none';
+            if (book.img) {
+                document.getElementById('bookImg').src = book.img;
+                document.getElementById('bookImg').alt = `Capa do livro ${book.titulo}`;
+            }
         }
-    });
 
-    purchaseForm?.addEventListener('submit', (event) => {
-        event.preventDefault();
-        alert('Compra realizada com sucesso!');
-        buyModal.style.display = 'none';
-    });
+        function setupEventListeners(isGestao) {
+            const buyButton = document.getElementById('buyButton');
+            const readButton = document.getElementById('readButton');
+            const cartBtn = document.getElementById("cartBtn");
+            const cartText = document.querySelector("#cartBtn .text");
+            const buyModal = document.getElementById('buyModal');
+            const closeModal = document.getElementById('closeModal');
+            const purchaseForm = document.getElementById('purchaseForm');
 
-   
-}
+            // Mensagem de sucesso
+            const successMessage = document.createElement("div");
+            successMessage.id = "successMessage";
+            successMessage.style.display = "none";
+            successMessage.style.position = "fixed";
+            successMessage.style.top = "100px";
+            successMessage.style.left = "50%";
+            successMessage.style.transform = "translateX(-50%)";
+            successMessage.style.backgroundColor = "#4CAF50";
+            successMessage.style.color = "white";
+            successMessage.style.padding = "15px";
+            successMessage.style.borderRadius = "8px";
+            successMessage.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.2)";
+            successMessage.style.zIndex = "1000";
+            document.body.appendChild(successMessage);
 
-window.addEventListener("beforeunload", () => {
-    localStorage.removeItem("livroSelecionado");
-});
+            if (buyButton && !isGestao) {
+                buyButton.addEventListener('click', () => {
+                    buyModal.style.display = 'block';
+                });
+            }
+
+            if (readButton && !isGestao) {
+                readButton.addEventListener('click', () => {
+                    const livro = JSON.parse(localStorage.getItem("livroSelecionado")) || {
+                        titulo: document.getElementById('bookTitle').innerText,
+                        autor: document.getElementById('bookAuthor').innerText.replace("Autor: ", "")
+                    };
+                    window.location.href = `leitura.html?title=${encodeURIComponent(livro.titulo)}&author=${encodeURIComponent(livro.autor)}`;
+                });
+            }
+
+            if (cartBtn && !isGestao) {
+                cartBtn.addEventListener("click", function () {
+                    if (cartBtn.classList.contains("success")) return;
+
+                    const livro = {
+                        titulo: document.getElementById('bookTitle').innerText,
+                        autor: document.getElementById('bookAuthor').innerText.replace("Autor: ", ""),
+                        preco: document.getElementById('bookPrice').innerText.replace("Preço: R$ ", ""),
+                        img: document.getElementById('bookImg').src
+                    };
+
+                    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+                    carrinho.push(livro);
+                    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+                    cartBtn.classList.add("success");
+                    cartText.classList.add("success");
+                    cartText.classList.remove("text");
+                    cartText.innerText = "Adicionado!";
+
+                    setTimeout(() => {
+                        cartBtn.classList.remove("success");
+                        cartText.classList.remove("success");
+                        cartText.innerText = "";
+                    }, 2000);
+                });
+            }
+
+            closeModal?.addEventListener('click', () => {
+                buyModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === buyModal) {
+                    buyModal.style.display = 'none';
+                }
+            });
+
+            purchaseForm?.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const titulo = document.getElementById('bookTitle').innerText;
+                const autor = document.getElementById('bookAuthor').innerText.replace("Autor: ", "");
+                const preco = document.getElementById('bookPrice').innerText.replace("Preço: R$ ", "");
+
+                const metodoPagamento = document.getElementById('payment').value || "Não foi informado o metodo de pagamento!";
+
+                let dadosExtras = "";
+                if (metodoPagamento === "credit-card") {
+                    const numero = document.getElementById('cardNumber')?.value;
+                    const validade = document.getElementById('cardexpiry')?.value;
+                    dadosExtras = `
+                    <span><b>Número do Cartão:</b> ****${numero?.slice(-4)}</span><br>
+                    <span><b>Validade:</b> ${validade}</span><br>
+                    `;
+                } else if (metodoPagamento === "boleto") {
+                    const cpf = document.getElementById('cpfBoleto')?.value;
+                    dadosExtras = `
+                    <span><b>CPF:</b> ${cpf}</span><br>`;
+                } else if (metodoPagamento === "pix") {
+                    const chavePix = document.getElementById('chavePix')?.value;
+                    dadosExtras = ` <span><b>Chave Pix:</b> ${chavePix}</span><br>`;
+                }
+                const msg = `
+            <strong>Compra realizada com sucesso!</strong><br>
+            <span><b>Título:</b> ${titulo}</span><br>
+            <span><b>Autor:</b> ${autor}</span><br>
+            <span><b>Preço:</b> R$ ${preco}</span>
+            <span><b>Método de Pagamento:</b> ${metodoPagamento}</span><br>
+            ${dadosExtras}
+        `;
+                const successBox = document.getElementById("successMessage");
+                successBox.innerHTML = msg;
+                successBox.style.display = "block";
+
+                setTimeout(() => {
+                    successBox.style.display = "none";
+                }, 5000);
+
+                buyModal.style.display = 'none';
+            });
+        }
+
+        // Remove o livro selecionado ao sair da página
+        window.addEventListener("beforeunload", () => {
+            localStorage.removeItem("livroSelecionado");
+        });
 
 
 
@@ -194,4 +281,5 @@ window.addEventListener("beforeunload", () => {
     <script src="livro.js"></script>
 </body>
 <footer>&copy;Ryan Chaves</footer>
+
 </html>

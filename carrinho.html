@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
-    <link rel="icon" href="./imgs/coruja.1.png">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="/imgs/coruja.1.png">
+    <link rel="stylesheet" href="/css/style2.css">
 </head>
 <body class="body-kit">
     <div class="Menu">
         <h1>LoreOwl𓅓</h1>
-        <a class="A" style="color: white;" href="./gestao.html">Voltar para início</a>
-        <a class="A" style="color: white;" href="./usuario.html" >Voltar</a>
+        <a class="A" href="./gestao.html" style="color: white;">Voltar para início</a>
+        <a class="A" href="./usuario.html" style="color: white;">Voltar</a>
     </div>
+
     <h1 class="titulo-carrinho">Itens no Carrinho</h1>
+
     <main class="carrinho">
-        <div class="Itens" id="carrinhoItens"><p class="carrinho p"></p></div>
-        
+        <div class="Itens" id="carrinhoItens">
+            <p class="carrinho p"></p>
+        </div>
     </main>
+
     <button id="limparCarrinho" class="limparCarrinho2">Limpar carrinho</button>
+
     <script src="carrinho.js"></script>
-   
+
     <div id="buyModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeModal">&times;</span>
@@ -42,9 +47,184 @@
                         <option value="pix">PIX</option>
                     </select>
                 </div>
+                <div id="credit-card-info">
+                    <input type="text" id="cardNumber" placeholder="Número do cartão">
+                    <input type="text" id="cardExpiry" placeholder="Validade">
+                </div>
+
+
+                <div id="boleto-info" style="display:none">
+                    <input type="text" id="cpfBoleto" placeholder="CPF do pagador">
+                </div>
+
+
+
+                <div id="pix-info" class="payment-option">
+                    <p>Escaneie o QR Code para pagamento via Pix:</p>
+                    <img class="qr-code"
+                        src="https://api.qrserver.com/v1/create-qr-code/?data=PagamentoPix123&size=200x200"
+                        alt="QR Code Pix">
+                        <input type="text" id="chavePix" placeholder="Chave Pix ">
+                </div>
                 <button type="submit" class="btn-submit">Finalizar Compra</button>
+
             </form>
         </div>
     </div>
+
+    <footer class="footer-car">&copy; Ryan Chaves</footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Elementos do modal
+            const paymentSelect = document.getElementById('payment');
+            const options = {
+                "credit-card": document.getElementById('credit-card-info'),
+                "boleto": document.getElementById('boleto-info'),
+                "pix": document.getElementById('pix-info')
+            };
+
+            // Mostrar/ocultar opções de pagamento
+            if (paymentSelect) {
+                paymentSelect.addEventListener('change', function () {
+                    for (let opt in options) {
+                        options[opt].style.display = 'none';
+                    }
+                    const selected = paymentSelect.value;
+                    if (options[selected]) {
+                        options[selected].style.display = 'block';
+                    }
+                });
+            }
+
+            // Carregar itens do carrinho
+            const carrinhoItens = document.getElementById('carrinhoItens');
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            
+            function exibirItensCarrinho() {
+                carrinhoItens.innerHTML = '';
+                
+                if (carrinho.length === 0) {
+                    carrinhoItens.innerHTML = '<p class="carrinho-vazio">Seu carrinho está vazio</p>';
+                    return;
+                }
+                
+                carrinho.forEach((item, index) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'item-carrinho';
+                    itemDiv.innerHTML = `
+                        <img src="${item.img || 'https://via.placeholder.com/100x150?text=Sem+Imagem'}" alt="${item.titulo}">
+                        <div class="info-item">
+                            <h3>${item.titulo}</h3>
+                            <p>Autor: ${item.autor}</p>
+                            <p>Preço: R$ ${item.preco}</p>
+                            <button class="remover-item" data-index="${index}">Remover</button>
+                        </div>
+                    `;
+                    carrinhoItens.appendChild(itemDiv);
+                });
+                
+                // Adicionar eventos aos botões de remover
+                document.querySelectorAll('.remover-item').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        carrinho.splice(index, 1);
+                        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+                        exibirItensCarrinho();
+                    });
+                });
+            }
+            
+            // Botão limpar carrinho
+            document.getElementById('limparCarrinho').addEventListener('click', function() {
+                localStorage.removeItem('carrinho');
+                carrinho.length = 0;
+                exibirItensCarrinho();
+            });
+            
+            // Botão finalizar compra
+            document.getElementById('finalizarCompra').addEventListener('click', function() {
+                if (carrinho.length === 0) {
+                    alert('Seu carrinho está vazio!');
+                    return;
+                }
+                document.getElementById('buyModal').style.display = 'block';
+            });
+            
+            // Modal de compra
+            const buyModal = document.getElementById('buyModal');
+            const closeModal = document.getElementById('closeModal');
+            const purchaseForm = document.getElementById('purchaseForm');
+            
+            closeModal?.addEventListener('click', () => {
+                buyModal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', (event) => {
+                if (event.target === buyModal) {
+                    buyModal.style.display = 'none';
+                }
+            });
+            
+            // Mensagem de sucesso
+            const successMessage = document.createElement("div");
+            successMessage.id = "successMessage";
+            successMessage.style.display = "none";
+            successMessage.style.position = "fixed";
+            successMessage.style.top = "100px";
+            successMessage.style.left = "50%";
+            successMessage.style.transform = "translateX(-50%)";
+            successMessage.style.backgroundColor = "#4CAF50";
+            successMessage.style.color = "white";
+            successMessage.style.padding = "15px";
+            successMessage.style.borderRadius = "8px";
+            successMessage.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.2)";
+            successMessage.style.zIndex = "1000";
+            document.body.appendChild(successMessage);
+            
+            // Finalizar compra
+            purchaseForm?.addEventListener('submit', (event) => {
+                event.preventDefault();
+                
+                // Calcular total
+                const total = carrinho.reduce((sum, item) => sum + parseFloat(item.preco), 0);
+                
+                // Obter informações do formulário
+                const metodoPagamento = document.getElementById('payment').value || "Não informado";
+                
+                let dadosExtras = "";
+                if (metodoPagamento === "credit-card") {
+                    const numero = document.getElementById('card-number').value;
+                    dadosExtras = `<span><b>Número do Cartão:</b> ****${numero.slice(-4)}</span><br>`;
+                }
+                
+                // Criar mensagem de sucesso
+                const msg = `
+                    <strong>Compra realizada com sucesso!</strong><br>
+                    <span><b>Total:</b> R$ ${total.toFixed(2)}</span><br>
+                    <span><b>Itens:</b> ${carrinho.length}</span><br>
+                    <span><b>Método de Pagamento:</b> ${metodoPagamento}</span><br>
+                    ${dadosExtras}
+                `;
+                
+                successMessage.innerHTML = msg;
+                successMessage.style.display = "block";
+                
+                setTimeout(() => {
+                    successMessage.style.display = "none";
+                }, 5000);
+                
+                // Limpar carrinho após compra
+                localStorage.removeItem('carrinho');
+                carrinho.length = 0;
+                exibirItensCarrinho();
+                
+                buyModal.style.display = 'none';
+            });
+            
+            // Exibir itens inicialmente
+            exibirItensCarrinho();
+        });
+    </script>
 </body>
-</html> <footer class="footer-car" >&copy;Ryan chaves </footer>
+</html>

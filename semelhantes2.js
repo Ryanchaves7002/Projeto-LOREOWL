@@ -384,71 +384,81 @@ const livrosSemelhantes = {
   "Homem-Aranha: Franked Red": [
     { titulo: "Dom Quixote", autor: "Miguel de Cervantes" }
   ],
-  "A menina Submersa":[
-    {titulo:"Imperiais",autor: "Raphael Draccon" }
+  "A menina Submersa": [
+    { titulo: "Imperiais", autor: "Raphael Draccon" }
   ],
-  "Volume 1 Dragon Ball":[
-    {titulo:"Volume 16 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 2 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 3 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 4 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 5 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 6 Dragon Ball", autor:"Akira Toriyama"}
+  "Volume 1 Dragon Ball": [
+    { titulo: "Volume 16 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 2 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 3 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 4 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 5 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 6 Dragon Ball", autor: "Akira Toriyama" }
   ],
-  "Volume 2 Dragon ball":[
-    {titulo:"Volume 16 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 1 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 3 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 4 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 5 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 6 Dragon Ball", autor:"Akira Toriyama"}
+  "Volume 2 Dragon ball": [
+    { titulo: "Volume 16 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 1 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 3 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 4 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 5 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 6 Dragon Ball", autor: "Akira Toriyama" }
   ],
-  "Volume 3 Dragon ball":[
-    {titulo:"Volume 16 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 4 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 5 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 6 Dragon Ball", autor:"Akira Toriyama"}
+  "Volume 3 Dragon ball": [
+    { titulo: "Volume 16 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 4 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 5 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 6 Dragon Ball", autor: "Akira Toriyama" }
   ],
-  "Volume 4 Dragon ball":[
-    {titulo:"Volume 16 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 1 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 5 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 6 Dragon Ball", autor:"Akira Toriyama"}
+  "Volume 4 Dragon ball": [
+    { titulo: "Volume 16 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 1 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 5 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 6 Dragon Ball", autor: "Akira Toriyama" }
   ],
-  "Volume 5 Dragon ball":[
-    {titulo:"Volume 16 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 1 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 6 Dragon Ball", autor:"Akira Toriyama"}
+  "Volume 5 Dragon ball": [
+    { titulo: "Volume 16 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 1 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 6 Dragon Ball", autor: "Akira Toriyama" }
   ],
-  "Volume 6 Dragon ball":[
-    {titulo:"Volume 16 Dragon Ball", autor:"Akira Toriyama"},
-    {titulo:"Volume 1 Dragon Ball", autor:"Akira Toriyama"}
+  "Volume 6 Dragon ball": [
+    { titulo: "Volume 16 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 1 Dragon Ball", autor: "Akira Toriyama" }
+  ],
+  "Volume 7 Dragon ball": [
+    { titulo: "Volume 16 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 1 Dragon Ball", autor: "Akira Toriyama" }
+  ], "Volume 8 Dragon ball": [
+    { titulo: "Volume 16 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 1 Dragon Ball", autor: "Akira Toriyama" }
+  ], "Volume 9 Dragon ball": [
+    { titulo: "Volume 16 Dragon Ball", autor: "Akira Toriyama" },
+    { titulo: "Volume 1 Dragon Ball", autor: "Akira Toriyama" }
   ],
   "Hamlet": [
-  { titulo: "Romeu e Julieta", autor: "William Shakespeare" }
-],
+    { titulo: "Romeu e Julieta", autor: "William Shakespeare" }
+  ],
 
-"Romeu e Julieta": [
-  { titulo: "Hamlet", autor: "William Shakespeare" }
-],
+  "Romeu e Julieta": [
+    { titulo: "Hamlet", autor: "William Shakespeare" }
+  ],
 
-"Verity": [
-  { titulo: "Crime e Castigo", autor: "Fiódor Dostoiévski" },
-  { titulo: "Noites Brancas", autor: "Fiódor Dostoiévski" }
-],
+  "Verity": [
+    { titulo: "Crime e Castigo", autor: "Fiódor Dostoiévski" },
+    { titulo: "Noites Brancas", autor: "Fiódor Dostoiévski" }
+  ],
 
-"Crime e Castigo": [
-  { titulo: "Noites Brancas", autor: "Fiódor Dostoiévski" },
-  { titulo: "Verity", autor: "Colleen Hoover" }
-],
+  "Crime e Castigo": [
+    { titulo: "Noites Brancas", autor: "Fiódor Dostoiévski" },
+    { titulo: "Verity", autor: "Colleen Hoover" }
+  ],
 
-"Noites Brancas": [
-  { titulo: "Crime e Castigo", autor: "Fiódor Dostoiévski" },
-  { titulo: "Verity", autor: "Colleen Hoover" }
-],
-"1984": [
-  { titulo: "A Revolução dos Bichos", autor: "George Orwell" },
-]
+  "Noites Brancas": [
+    { titulo: "Crime e Castigo", autor: "Fiódor Dostoiévski" },
+    { titulo: "Verity", autor: "Colleen Hoover" }
+  ],
+  "1984": [
+    { titulo: "A Revolução dos Bichos", autor: "George Orwell" },
+  ]
 
 };
 
@@ -467,7 +477,7 @@ function verSemelhantes(titulo) {
 
   // Create a more visually appealing alert with emojis and formatting
   let resultado = `📚 Livros semelhantes a "${normalizedTitle}":\n\n`;
-  
+
   semelhantes.forEach((livro, index) => {
     resultado += `${index + 1}️⃣ ${livro.titulo} — ${livro.autor || 'Autor desconhecido'}\n`;
   });
@@ -478,7 +488,7 @@ function verSemelhantes(titulo) {
 
   // Use confirm to allow user to see more details
   const userChoice = confirm(`${resultado}\n\nDeseja ver mais detalhes?`);
-  
+
   if (userChoice) {
     // Could be enhanced to show more details or redirect to a detailed page
     console.log("Detalhes expandidos:", { titulo: normalizedTitle, semelhantes });

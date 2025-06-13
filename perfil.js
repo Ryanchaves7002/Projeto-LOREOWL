@@ -3,19 +3,26 @@ const closeModalBtn = document.getElementById("closeModal");
 const fileInput = document.getElementById("modalFileInput");
 const modalProfileImg = document.getElementById("modalProfileImg");
 const currentUser2 = localStorage.getItem("currentUser") || "Visitante";
-const email = localStorage.getItem("modalUserEmail");
+const email = localStorage.getItem("modalUserEmail") || localStorage.getItem("currentUser");
 const password = localStorage.getItem("modalUserPassword") || "******";
 
 
 document.getElementById("modalUserName").textContent = currentUser2;
 document.getElementById("modalUserEmail").textContent = email;
-document.getElementById("modalUserPassword").textContent = "******"; 
+document.getElementById("modalUserPassword").textContent = "******";
 
+
+const userData = localStorage.getItem(email);
+if (userData) {
+    const user = JSON.parse(userData);
+    if (user.profileImage && modalProfileImg) {
+        modalProfileImg.src = user.profileImage;
+    }
+}
 
 document.querySelector("#profileIcon i").addEventListener("click", () => {
-    modal.style.display = "flex"; 
+    modal.style.display = "flex";
 });
-
 
 closeModalBtn.addEventListener("click", () => {
     modal.style.display = "none";
@@ -35,12 +42,19 @@ fileInput.addEventListener("change", function (event) {
         const reader = new FileReader();
         reader.onload = function (e) {
             modalProfileImg.src = e.target.result;
+
+            const currentEmail = email;
+            if (currentEmail) {
+                const user = JSON.parse(localStorage.getItem(currentEmail));
+                if (user) {
+                    user.profileImage = e.target.result;
+                    localStorage.setItem(currentEmail, JSON.stringify(user));
+                }
+            }
         };
         reader.readAsDataURL(file);
     }
 });
-
-
 const togglePassword = document.getElementById("togglePassword");
 togglePassword.addEventListener("click", () => {
     const passwordSpan = document.getElementById("modalUserPassword");
